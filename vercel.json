@@ -1,0 +1,19 @@
+{
+    "projects": {
+      "frontend": {
+        "src": "frontend",
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist"
+      },
+      "backend": {
+        "src": "backend",
+        "buildCommand": "npm run build",
+        "outputDirectory": "public"
+      }
+    },
+    "routes": [
+      { "src": "/api/(.*)", "dest": "backend/$1" },
+      { "src": "/(.*)", "dest": "frontend/dist/$1" }
+    ]
+  }
+  
