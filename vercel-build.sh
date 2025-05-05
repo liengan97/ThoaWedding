@@ -32,4 +32,8 @@ ls -al public
 npm run build
 
 ls -al dist
+
+echo 'hmm'
 ls -al /vercel/output 
+
+cat /vercel/output/builds.json
