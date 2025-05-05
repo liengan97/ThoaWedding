@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm run build",
   "startCommand": "npm run start:prod",
-  "outputDirectory": "public"
+  "outputDirectory": "dist"
 }
