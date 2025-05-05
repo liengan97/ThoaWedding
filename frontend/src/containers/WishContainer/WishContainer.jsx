@@ -13,7 +13,8 @@ function WishContainer() {
 
   useEffect(() => {
     // const eventSource = new EventSource("http://localhost:3000/api/wish");
-    const hostUrl = process.env.VERCEL_URL || 'http://localhost:5000'
+    // const hostUrl = process.env.VERCEL_URL || 'http://localhost:5000'
+    const hostUrl = process.env.VERCEL_URL || 'https://wedding-6mkd.vercel.app'
     console.log('Host:', hostUrl);
     const eventSource = new EventSource(`${hostUrl}/api/wish`);
     eventSource.onmessage = (event) => {
