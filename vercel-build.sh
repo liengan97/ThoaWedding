@@ -23,4 +23,4 @@ npm install
 
 echo "✅ Build Complete!"
 
-ll -al
+ls -al
