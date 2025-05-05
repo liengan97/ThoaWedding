@@ -12,7 +12,8 @@ function WishContainer() {
   const [wishes, setWishes] = useState([]);
 
   useEffect(() => {
-    const eventSource = new EventSource("http://localhost:3000/api/wish");
+    // const eventSource = new EventSource("http://localhost:3000/api/wish");
+    const eventSource = new EventSource("https://wedding-6mkd-c3ww9kchk-tainguyens-projects.vercel.app/api/wish");
     eventSource.onmessage = (event) => {
       setWishes(JSON.parse(event.data));
     };

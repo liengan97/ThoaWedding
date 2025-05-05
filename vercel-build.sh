@@ -7,6 +7,7 @@ echo "📦 Building Frontend..."
 cd frontend
 npm install
 npm run build
+mkdir -p ../backend/public
 mv dist ../backend/public/ # Move build output into backend
 
 echo "🚀 Building Backend..."
