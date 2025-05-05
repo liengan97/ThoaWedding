@@ -15,7 +15,7 @@ echo 'Creating /public folder'
 mkdir ../backend/public
 
 echo 'Move build output into backend'
-mv dist ../backend/public/ # Move build output into backend
+mv dist/* ../backend/public/ # Move build output into backend
 
 echo "🚀 Building Backend..."
 cd ../backend
