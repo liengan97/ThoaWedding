@@ -16,3 +16,4 @@ npm install
 
 echo "✅ Build Complete!"
 
+echo 'htm'
