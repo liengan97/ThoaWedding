@@ -7,7 +7,14 @@ echo "📦 Building Frontend..."
 cd frontend
 npm install
 npm run build
-mkdir -p ../backend/public
+
+echo 'Removing /backend/public' folder
+rm -rf ../backend/public
+
+echo 'Creating /public folder'
+mkdir ../backend/public
+
+echo 'Move build output into backend'
 mv dist ../backend/public/ # Move build output into backend
 
 echo "🚀 Building Backend..."
@@ -16,4 +23,4 @@ npm install
 
 echo "✅ Build Complete!"
 
-echo 'htm'
+ll -al
