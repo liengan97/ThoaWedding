@@ -28,3 +28,4 @@ echo "✅ Build Complete!"
 
 ls -al
 ls -al public
+ls -al dist
