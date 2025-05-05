@@ -11,8 +11,6 @@ npm run build
 echo 'Removing /backend/public' folder
 rm -rf ../backend/public
 
-ls -al ../backend/public
-
 echo 'Creating /public folder'
 mkdir ../backend/public
 
