@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm run build",
-  "startCommand": "wtf",
+  "startCommand": "node dist/main.js",
   "outputDirectory": "dist"
 }
