@@ -28,4 +28,7 @@ echo "✅ Build Complete!"
 
 ls -al
 ls -al public
+
+npm run build
+
 ls -al dist
