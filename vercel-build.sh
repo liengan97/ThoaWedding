@@ -32,4 +32,4 @@ ls -al public
 npm run build
 
 ls -al dist
-ls- al /vercel/output 
+ls - al /vercel/output 
