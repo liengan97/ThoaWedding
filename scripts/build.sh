@@ -1,20 +1,39 @@
-#!/bin/sh
+#!/bin/bash
 
+# Exit if any command fails
+set -e
+
+echo "📦 Building Frontend..."
 cd frontend
+
+rm -rf dist
+
+npm install
 npm run build
 
+echo 'Removing /backend/public' folder
 rm -rf ../backend/public
 
-mkdir ../backend/public 
+echo 'Creating /public folder'
+mkdir ../backend/public
 
-pwd
+echo 'Move build output into backend'
+mv dist/* ../backend/public/ # Move build output into backend
 
-cd ..
+echo "🚀 Building Backend..."
+cd ../backend
+npm install
 
-mv ./frontend/dist/* ./backend/public/
+echo "✅ Build Complete!"
 
-cd backend
+ls -al
+ls -al public
 
 npm run build
 
-node dist/main.js
+ls -al dist
+
+echo 'hmm'
+ls -al /vercel/output 
+
+cat /vercel/output/builds.json
