@@ -5,12 +5,12 @@ import { apiLimiter } from "@/utils/rate-limiter.util";
 import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
 
 export async function POST(req) {
-  const ip = req.headers.get("x-forwarded-for") || req.ip;
-  const { success } = await apiLimiter.limit(ip);
+  // const ip = req.headers.get("x-forwarded-for") || req.ip;
+  // const { success } = await apiLimiter.limit(ip);
 
-  if (!success) {
-    return new Response("Too Many Requests", { status: 429 });
-  }
+  // if (!success) {
+  //   return new Response("Too Many Requests", { status: 429 });
+  // }
 
   const { sender, message } = await req.json();
   const docRef = await addDoc(collection(db, WedEnv.WISHES_COLLECTION_NAME), {
