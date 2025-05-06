@@ -15,3 +15,6 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 export const db = getFirestore(firebaseApp);
+
+
+console.log('dsad', WedEnv.FIREBASE_API_KEY)

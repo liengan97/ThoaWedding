@@ -10,7 +10,7 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
         </div>
 
         <div className="w-full sm:h-130 lg:h-190 mr-5">
-          <Image className="inset-0 w-full h-full object-cover" src={photoUrl} />
+          <Image alt='' fill className="inset-0 w-full h-full object-cover" src={photoUrl} />
         </div>
 
         <div className="pt-5 px-4">

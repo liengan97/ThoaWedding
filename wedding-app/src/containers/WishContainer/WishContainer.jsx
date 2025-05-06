@@ -9,15 +9,16 @@ import SendWishesForm from "@/components/SendWishesForm/SendWishesForm";
 import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
 import WedEnv from "@/config/wedenv.config";
+import ParallaxImage from "@/components/ParallaxImage/ParallaxImage";
 
+import fl from '@/images/FHDie4iPjN.jpg'
 function WishContainer() {
   const [wishes, setWishes] = useState([]);
 
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
-      setWishes(JSON.parse(event.data));
-      console.log('wishes', wishes);
+      setWishes(prevWishes => [...prevWishes, JSON.parse(event.data)]);
     };
 
     return () => eventSource.close();
@@ -35,7 +36,7 @@ function WishContainer() {
       </Section>
 
       <Section className="relative">
-        <Parallax bgUrl="/FHDie4iPjN.jpg">
+        <Parallax bgUrl={fl.src}>
           <Overlay type="warm" />
           <div className="md:w-3/5 mx-auto h-screen relative">
             <TextCenter className="h-[80px]">

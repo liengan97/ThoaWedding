@@ -5,7 +5,7 @@ function IntroductionCard({ name, birthday, photoUrl }) {
   return (
     <div className="intro-card relative w-full h-full rounded-xl">
       <div className="h-full">
-        <Image className="h-full rounded-lg" src={photoUrl} />
+        <Image alt='' fill className="h-full rounded-lg" src={photoUrl} />
       </div>
       <div className="absolute intro-body text-center">
         <h3>{name?.toUpperCase()}</h3>

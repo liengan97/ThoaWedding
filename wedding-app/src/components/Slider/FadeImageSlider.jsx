@@ -30,7 +30,7 @@ function FadeImageSlider({ photos = [] }) {
               </h1>
             </div>
             <div style={{ width: '30px', height: '30px', marginTop: '2rem', marginBottom: '2rem' }}>
-              <Image src="/CFIiT6KZn3.png" />
+              <Image alt="" fill src="/CFIiT6KZn3.png" />
             </div>
             <div>
               <h1 className="text-white text-4xl md:text-5xl font-bold text-center cgt" style={{ fontSize: '30px'}}>

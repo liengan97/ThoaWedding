@@ -1,13 +1,18 @@
 import { db } from "@/config/firebase.config";
 import WedEnv from "@/config/wedenv.config";
 import { utcTime } from "@/utils/date.util";
-import basicRateLimiter from "@/utils/rate-limiter.util";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { limiter } from "@/utils/rate-limiter.util";
+import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
 
-export async function POST(req, res) {
-  await basicRateLimiter(res);
+export async function POST(req) {
+  await limiter.checkNext(req, 5);
   const { sender, message } = await req.json();
-  const docRef = await addDoc(collection(db, WedEnv.WISHES_COLLECTION_NAME), { sender, message, atUtc: utcTime() });
+  const docRef = await addDoc(collection(db, WedEnv.WISHES_COLLECTION_NAME), {
+    sender,
+    message,
+    atUtc: utcTime(),
+    ts: Timestamp.now()
+  });
   return Response.json({ id: docRef.id });
 }
 
@@ -23,8 +28,11 @@ export async function GET(req) {
       start(controller) {
         const wishesCollection = collection(db, WedEnv.WISHES_COLLECTION_NAME);
         const unsubscribe = onSnapshot(wishesCollection, snapshot => {
-          const wishes = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          controller.enqueue(`data: ${JSON.stringify(wishes)}\n\n`);
+          snapshot.docChanges().forEach(change => {
+            if (change.type === "added") {
+              controller.enqueue(`data: ${JSON.stringify(change.doc.data())}\n\n`);
+            }
+          });
         });
 
         req.signal.addEventListener("abort", () => {

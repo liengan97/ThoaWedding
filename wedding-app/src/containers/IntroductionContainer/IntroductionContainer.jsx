@@ -1,4 +1,5 @@
 import IntroductionCard from '@/components/IntroductionCard/IntroductionCard'
+import { bridgePhotoUrl, broomPhotoUrl } from '@/config/photo.config';
 import { courgette } from '@/utils/font.util';
 
 function IntroductionContainer() {
@@ -12,10 +13,10 @@ function IntroductionContainer() {
       </div>
       <div className="relative grid sm:grid-cols-1 md:grid-cols-2 gap-2 pb-10">
         <div className="md:pr-3 rounded-md h-150">
-          <IntroductionCard name="Hửu Tài" birthday="14/01/1997" photoUrl="/K9ffRRvX0V.jpg" />
+          <IntroductionCard name="Hửu Tài" birthday="14/01/1997" photoUrl={broomPhotoUrl} />
         </div>
         <div className="md:pl-3 rounded-md h-150">
-          <IntroductionCard name="Kim Ngân" birthday="22/04/1997" photoUrl="/0mzGqdQFMd.jpg" />
+          <IntroductionCard name="Kim Ngân" birthday="22/04/1997" photoUrl={bridgePhotoUrl} />
         </div>
       </div>
     </div>

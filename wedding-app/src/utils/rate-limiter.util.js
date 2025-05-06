@@ -1,5 +1,6 @@
-import { initRateLimit } from "next-rate-limit";
+import rateLimit from "next-rate-limit";
 
-const basicRateLimiter = initRateLimit({ limit: 5, window: 60 * 1000 });
-
-export default basicRateLimiter;
+export const limiter = rateLimit({
+  interval: 60 * 1000, // Limit per minute
+  uniqueTokenPerInterval: 5, // 50 requests per minute per user
+});
