@@ -1,7 +1,7 @@
 import { db } from "@/config/firebase.config";
 import WedEnv from "@/config/wedenv.config";
 import { utcTime } from "@/utils/date.util";
-import { apiLimiter } from "@/utils/rate-limiter.util";
+// import { apiLimiter } from "@/utils/rate-limiter.util";
 import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
 
 export async function POST(req) {
