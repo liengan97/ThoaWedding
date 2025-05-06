@@ -1,11 +1,17 @@
 import { db } from "@/config/firebase.config";
 import WedEnv from "@/config/wedenv.config";
 import { utcTime } from "@/utils/date.util";
-import { limiter } from "@/utils/rate-limiter.util";
+import { apiLimiter } from "@/utils/rate-limiter.util";
 import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
 
 export async function POST(req) {
-  await limiter.checkNext(req, 5);
+  const ip = req.headers.get("x-forwarded-for") || req.ip;
+  const { success } = await apiLimiter.limit(ip);
+
+  if (!success) {
+    return new Response("Too Many Requests", { status: 429 });
+  }
+
   const { sender, message } = await req.json();
   const docRef = await addDoc(collection(db, WedEnv.WISHES_COLLECTION_NAME), {
     sender,
@@ -13,6 +19,7 @@ export async function POST(req) {
     atUtc: utcTime(),
     ts: Timestamp.now()
   });
+
   return Response.json({ id: docRef.id });
 }
 
