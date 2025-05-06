@@ -1,16 +1,18 @@
 import './style.css'
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMap, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl }) {
   return (
     <div className="mx-3 py-5">
-      <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center">
+      <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center bg-white">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 font-bold text-gray-800 rounded-lg qsand">
           {title}
         </div>
 
         <div className="w-full sm:h-130 lg:h-190 mr-5">
-          <Image alt='' fill className="inset-0 w-full h-full object-cover" src={photoUrl} />
+          <Image alt=''  className="inset-0 w-full h-full object-cover" src={photoUrl} />
         </div>
 
         <div className="pt-5 px-4">
@@ -38,8 +40,9 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
         </div>
 
         <div className="social-link flex items-center place-content-center gap-2 py-5">
-          <a href={phoneNumber}><i className="fas fa-phone"></i></a>
-          <a href={googleMapLocation} target='_blank'><i className="fas fa-map"></i></a>
+          {/* <FontAwesomeIcon icon={'phone-circle'} /> */}
+          <a href={phoneNumber}><FontAwesomeIcon icon={faPhone} /></a>
+          <a href={googleMapLocation} target='_blank'><FontAwesomeIcon icon={faMap} /></a>
         </div>
       </div>
     </div>

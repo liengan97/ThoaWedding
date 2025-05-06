@@ -1,3 +1,4 @@
+import { firstEventPhotoUrl, secondEventPhotoUrl } from '@/config/photo.config';
 import './styles.css'
 import EventCard from "@/components/EventCard/EventCard";
 
@@ -11,7 +12,7 @@ function WeddingEventsContainer() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <EventCard
-          photoUrl="/z6OboXEavt.jpg"
+          photoUrl={firstEventPhotoUrl}
           title="Vu Quy"
           location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, Tân An, Long An"
           time="10:00"
@@ -24,7 +25,7 @@ function WeddingEventsContainer() {
         />
 
         <EventCard
-          photoUrl="/EHOmGSI4SJ.jpg"
+          photoUrl={secondEventPhotoUrl}
           title="Tân Hôn"
           location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, Tân An, Long An"
           time="09:00"

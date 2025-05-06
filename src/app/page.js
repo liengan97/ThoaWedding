@@ -2,13 +2,18 @@ import Countdown from "@/components/CountDown/CountDown";
 import Parallax from "@/components/Parallax/Parallax";
 import ThankYou from "@/components/ThankYou/ThankYou";
 import WedEnv from "@/config/wedenv.config";
-import { countDownPhotoUrl, THANK_YOU_PHOTO } from "@/config/photo.config";
+import { countDownPhotoUrl, thankyouPhotoUrl } from "@/config/photo.config";
 import IntroductionContainer from "@/containers/IntroductionContainer/IntroductionContainer";
 import PhotoSliderContainer from "@/containers/PhotoSliderContainer/PhotoSliderContainer";
 import WeddingEventsContainer from "@/containers/WeddingEventsContainer/WeddingEventsContainer";
 import WishContainer from "@/containers/WishContainer/WishContainer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // Fixes flashing issue
+
+config.autoAddCss = false; // Prevents duplicate CSS injection
 
 export default function Home() {
   return (
@@ -21,7 +26,7 @@ export default function Home() {
       </Parallax>
       <WeddingEventsContainer />
       <WishContainer />
-      <Parallax bgUrl={THANK_YOU_PHOTO} bgTop="10">
+      <Parallax bgUrl={thankyouPhotoUrl.src} bgTop="10">
         <ThankYou />
       </Parallax>
     </div>

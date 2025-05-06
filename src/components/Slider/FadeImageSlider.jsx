@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { courgette, fzPhotograph } from "@/utils/font.util";
+import { k } from "@/config/photo.config";
 
 function FadeImageSlider({ photos = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,15 +27,15 @@ function FadeImageSlider({ photos = [] }) {
 
           <div className="absolute inset-0 flex items-center justify-center flex-col">
             <div className="flex">
-              <h1 className="text-white text-4xl md:text-5xl font-bold text-center cgt" style={{ fontSize: '68px' }}>
+              <h1 className={`text-white text-4xl md:text-5xl font-bold text-center ${fzPhotograph.className}`} style={{ fontSize: '68px' }}>
                 Hửu Tài & Kim Ngân
               </h1>
             </div>
             <div style={{ width: '30px', height: '30px', marginTop: '2rem', marginBottom: '2rem' }}>
-              <Image alt="" fill src="/CFIiT6KZn3.png" />
+              <Image alt="" src={k} />
             </div>
             <div>
-              <h1 className="text-white text-4xl md:text-5xl font-bold text-center cgt" style={{ fontSize: '30px'}}>
+              <h1 className={`text-white text-4xl md:text-5xl font-bold text-center ${courgette.className}`} style={{ fontSize: '30px'}}>
                 We're getting Married
               </h1>
             </div>

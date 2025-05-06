@@ -35,7 +35,7 @@ function WishContainer() {
         </LayoutCenter>
       </Section>
 
-      <Section className="relative">
+      {wishes.length && (<Section className="relative">
         <Parallax bgUrl={fl.src}>
           <Overlay type="warm" />
           <div className="md:w-3/5 mx-auto h-screen relative">
@@ -48,6 +48,7 @@ function WishContainer() {
           </div>
         </Parallax>
       </Section>
+      )}
     </>
   )
 }

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, use } from "react";
 import CountDownItem from "./CountDownItem";
 import Heartbeat from "../Heartbeat/Heartbeat";
+import { courgette } from "@/utils/font.util";
 
 function Countdown({ targetDate }) {
   const [timeLeft, setTimeLeft] = useState({
@@ -39,7 +40,7 @@ function Countdown({ targetDate }) {
   return (
     <div className="w-full h-full flex items-center flex-col place-content-center">
       <div className="flex items-center md:py-8 pl-5">
-        <h1 className="text-2xl font-bold text-center cgt f36 text-white">Saturday, 24 May 2025</h1>
+        <h1 className={`${courgette.className} text-4xl font-bold text-center text-white fw-600`}>Saturday, 24 May 2025</h1>
       </div>
       <Heartbeat />
       <div className="flex items-center">
