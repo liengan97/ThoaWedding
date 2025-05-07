@@ -6,7 +6,7 @@ function Parallax({ height, bgUrl, bgTop, children }) {
   return (
     <div
       // className={`h-${height > 0 ? height : 'screen'} parallax bg-[center_${bgTop > 0 ? bgTop : 50}%]`}
-      className={`h-${height > 0 ? height : 'screen'} parallax`}
+      className={`h-${height > 0 ? height : 'screen'} parallax min-h-[100vh] min-h-[-webkit-fill-available]`}
       style={{
         backgroundImage: `url(${bgUrl})`
       }}
