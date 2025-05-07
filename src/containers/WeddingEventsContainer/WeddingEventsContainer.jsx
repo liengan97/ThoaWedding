@@ -1,12 +1,13 @@
 import { firstEventPhotoUrl, secondEventPhotoUrl } from '@/config/photo.config';
 import './styles.css'
 import EventCard from "@/components/EventCard/EventCard";
+import Title from '@/components/Title/Title';
 
 function WeddingEventsContainer() {
   return (
     <div className="md:w-3/5 mx-auto py-10 relative" >
       <div className="flex items-center flex-col pb-5 px-5 text-center event">
-        <h2 className="text-2xl py-5 event-title">Our Wedding Events</h2>
+        <Title className="py-5">Our Wedding Events</Title>
         <p>We invite you to share in the joy of our wedding!</p>
       </div>
 
@@ -21,8 +22,7 @@ function WeddingEventsContainer() {
           year="2025"
           phoneNumber="tel:(+84)981864289"
           alternativeDay="Nhằm ngày 27 tháng 04 năm Ất Tỵ"
-          // googleMapLocation="https://maps.app.goo.gl/Z64o4DrmuoCEfQnHA"
-          googleMapLocation="https://maps.google.com?q=10.4171707,105.6504265,19"
+          googleMapLocation="https://maps.app.goo.gl/Z64o4DrmuoCEfQnHA"
         />
 
         <EventCard

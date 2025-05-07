@@ -6,7 +6,7 @@ import { quicksand } from '@/utils/font.util';
 
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl }) {
   return (
-    <div className="mx-3 py-5 rounded-lg">
+    <div className="mx-3 py-5">
       <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center bg-white">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 font-bold text-gray-800 rounded-lg qsand">
           {title}
@@ -37,7 +37,7 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
           </div>
         </div>
         <div>
-          <p className={`${quicksand.className}`}>{alternativeDay}</p>
+          <p className={`italic`}>{alternativeDay}</p>
         </div>
 
         <div className="social-link flex items-center place-content-center gap-2 py-5">
