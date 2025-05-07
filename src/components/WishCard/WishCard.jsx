@@ -8,7 +8,7 @@ function WishCard({ whoSend, createdAt, message }) {
         <h4 className="text-lg font-semibold sender">{whoSend}</h4>
         <p className="text-gray-500 text-xs py-1 text-white">{createdAt}</p>
         <div className="pt-4">
-          <p className="text-white text-sm italic whitespace-normal break-keep">{message}</p>
+          <p className="text-white text-sm whitespace-normal break-keep">{message}</p>
         </div>
       </div>
     </div>
