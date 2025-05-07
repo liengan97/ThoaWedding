@@ -2,7 +2,7 @@ import './styles.css'
 
 function ThankYou() {
   return (
-    <div className="relative w-full h-full tk-wrapper">
+    <div className="relative w-full min-h-screen tk-wrapper">
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="absolute inset-0 text-white flex items-center justify-center text-center">
         <div className="flex flex-col space-y-4">

@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // Fixes flashing issue
 import ParallaxImage from "@/components/ParallaxImage/ParallaxImage";
+import Background from "@/components/Background/Background";
 
 config.autoAddCss = false; // Prevents duplicate CSS injection
 
@@ -30,7 +31,6 @@ export default function Home() {
       <Parallax bgUrl={thankyouPhotoUrl.src} bgTop="10">
         <ThankYou />
       </Parallax>
-      <ParallaxImage />
     </div>
   );
 }

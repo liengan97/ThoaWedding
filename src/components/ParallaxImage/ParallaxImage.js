@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import img from '@/images/FHDie4iPjN.jpg'
 
 export default function ParallaxImage({ children }) {
