@@ -6,20 +6,25 @@ import { toast } from "react-toastify";
 
 const conf = {
   position: "top-center",
-  autoClose: 1000,
+  autoClose: 3000,
   hideProgressBar: true,
   closeOnClick: true,
   pauseOnHover: true,
   draggable: true,
   theme: "colored",
+  style: { backgroundColor: "#436135", color: "#fff" },
 }
 
-const showNotification = (msg) => {
-  toast(msg, conf);
-};
-
 const thankYou = (sender) => {
-  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, {...conf, autoClose: 3000,});
+  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, conf);
+}
+
+const hmm = () => {
+  toast("Hmm. Bạn đang làm gì đó 😣 !", { ...conf, ...{ style: { backgroundColor: "#ffb224", color: "#000" } } });
+}
+
+const hmmError = () => {
+  toast("Có lỗi rồi. Bạn thử lại sau nha. 🥲", { ...conf, ...{ style: { backgroundColor: "red", color: "#000" } } })
 }
 
 function SendWishesForm() {
@@ -41,9 +46,9 @@ function SendWishesForm() {
         setWish("");
       }).catch(error => {
         if (error.status == 429) {
-          showNotification('Hmm. Bạn đang làm gì đó 😣 !')
+          hmm();
         } else {
-          showNotification('Có lỗi rồi. Bạn thử lại sau nha. 🥲')
+          hmmError();
         }
       }).finally(() => {
         setLoading(false);

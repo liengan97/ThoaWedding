@@ -11,14 +11,14 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css"; // Fixes flashing issue
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
-config.autoAddCss = false; // Prevents duplicate CSS injection
+config.autoAddCss = false;
 
 export default function Home() {
   return (
     <div>
-      <ToastContainer />
+      <ToastContainer toastClassName="bg-blue-500 text-white" />
       <PhotoSliderContainer />
       <IntroductionContainer />
       <Parallax height="150" bgUrl={countDownPhotoUrl.src} bgTop="50">
