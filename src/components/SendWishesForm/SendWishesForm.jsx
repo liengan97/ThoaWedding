@@ -4,17 +4,23 @@ import React, { useState } from "react";
 
 import { toast } from "react-toastify";
 
-const showNotification = (sender) => {
-  toast(`Thank you, ${sender}! Your wish has been sent.`, {
-    position: "top-center",
-    autoClose: 1000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    theme: "colored",
-  });
+const conf = {
+  position: "top-center",
+  autoClose: 1000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  theme: "colored",
+}
+
+const showNotification = (msg) => {
+  toast(msg, conf);
 };
+
+const thankYou = (sender) => {
+  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, {...conf, autoClose: 3000,});
+}
 
 function SendWishesForm() {
   const [name, setName] = useState("");
@@ -30,7 +36,7 @@ function SendWishesForm() {
         sender: name,
         message: wish
       }).then(_ => {
-        showNotification(name);
+        thankYou(name);
         setName("");
         setWish("");
       }).catch(error => {

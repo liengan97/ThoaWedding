@@ -15,9 +15,6 @@ class WedEnv {
   // App
   static WED_COUNT_DOWN_T0_DATE = process.env.WED_COUNT_DOWN_T0_DATE || "2025-05-24"
 
-  // Vercel
-  static VERCEL_URL = process.env.VERCEL_URL;
-
   // Rate limit
   static RATE_LIMIT_WINDOW = 1 * 60 * 1000
   static RATE_LIMIT_MAX_REQUEST_PER_WINDOW = 5
