@@ -35,7 +35,7 @@ function FadeImageSlider({ photos = [] }) {
             <div className="mb-4" style={{ width: '30px', height: '30px' }}>
               <Image alt="heart" src={k} />
             </div>
-            <div className="pb-10">
+            <div className="pb-20">
               <p className={`text-lg md:text-2xl lg:text-3xl font-bold text-white text-center ${courgette.className}`}>
                 We're getting Married
               </p>
