@@ -43,7 +43,7 @@ function WishContainer() {
       {wishes.length > 0 && (<Section className="relative">
         <Parallax bgUrl={fl.src}>
           <Overlay type="warm" />
-          <div className="md:w-3/5 mx-auto h-screen relative">
+          <div className="md:w-3/5 mx-auto h-[100dvh] relative">
             <TextCenter className="h-[80px]">
               <Title className="py-5 text-white">✨ Wishes from Everyone ✨</Title>
             </TextCenter>
