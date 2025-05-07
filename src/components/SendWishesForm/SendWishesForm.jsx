@@ -3,7 +3,6 @@ import './styles.css';
 import React, { useState } from "react";
 
 import { toast } from "react-toastify";
-import WedEnv from "@/config/wedenv.config";
 
 const showNotification = (sender) => {
   toast(`Thank you, ${sender}! Your wish has been sent.`, {
@@ -27,15 +26,19 @@ function SendWishesForm() {
 
     if (name.trim() && wish.trim()) {
       setLoading(true);
-      axios.post(WedEnv.API_CREATE_WISH, {
+      axios.post("/api/wishes", {
         sender: name,
         message: wish
       }).then(_ => {
         showNotification(name);
         setName("");
         setWish("");
-      }).catch(_ => {
-        alert('Error');
+      }).catch(error => {
+        if (error.status == 429) {
+          showNotification('Hmm. Bạn đang làm gì đó 😣 !')
+        } else {
+          showNotification('Có lỗi rồi. Bạn thử lại sau nha. 🥲')
+        }
       }).finally(() => {
         setLoading(false);
       })

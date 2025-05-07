@@ -18,10 +18,6 @@ class WedEnv {
   // Vercel
   static VERCEL_URL = process.env.VERCEL_URL;
 
-  // API
-  static API_CREATE_WISH = process.env.API_CREATE_WISH || "/api/wishes"
-  static API_WISH_SSE_EVENTS = process.env.API_WISH_SSE_EVENTS || "/api/wishes"
-
   // Rate limit
   static RATE_LIMIT_WINDOW = 1 * 60 * 1000
   static RATE_LIMIT_MAX_REQUEST_PER_WINDOW = 5
