@@ -16,7 +16,7 @@ function FadeImageSlider({ photos = [] }) {
   }, [photos.length]);
 
   return (
-    <div className="relative h-screen w-screen bg-black">
+    <div className="relative h-[100dvh] w-screen bg-black">
       {photos.map((photo, index) => (
         <div
           key={index}
