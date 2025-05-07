@@ -22,8 +22,8 @@ function WishContainer() {
       const existing = wishes.find(w => w.id == wish.id);
       console.log('Find', wish.id, 'from', wishes, 'result', existing);
       if (!existing) {
-        setWishes([...wishes, wish]);
-        console.log('Add new wish', wish, wishes);
+        setWishes(prev => [...prev, wish]);
+        console.log('Add new wish', wishes);
       }
     };
 
