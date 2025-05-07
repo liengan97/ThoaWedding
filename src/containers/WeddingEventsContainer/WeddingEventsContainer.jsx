@@ -1,5 +1,5 @@
-import { firstEventPhotoUrl, secondEventPhotoUrl } from '@/config/photo.config';
 import './styles.css'
+import { firstEventPhotoUrl, secondEventPhotoUrl } from '@/config/photo.config';
 import EventCard from "@/components/EventCard/EventCard";
 import Title from '@/components/Title/Title';
 
