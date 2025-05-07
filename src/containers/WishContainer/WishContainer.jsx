@@ -8,7 +8,6 @@ import LayoutCenter from "@/components/Center/LayoutCenter";
 import SendWishesForm from "@/components/SendWishesForm/SendWishesForm";
 import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
-import WedEnv from "@/config/wedenv.config";
 
 import fl from '@/images/FHDie4iPjN.jpg'
 function WishContainer() {
