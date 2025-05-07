@@ -1,8 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { courgette, fzPhotograph } from "@/utils/font.util";
-import { k } from "@/config/photo.config";
 import * as styles from './styles.module.css'
 
 function FadeImageSlider({ photos = [] }) {
@@ -32,7 +30,7 @@ function FadeImageSlider({ photos = [] }) {
                 Hửu Tài & Kim Ngân
               </h1>
             </div>
-            <div className="lg:pt-5 pb-20">
+            <div className="lg:pt-5 pb-30">
               <p className={`text-sm md:text-2xl lg:text-3xl font-bold text-white text-center ${courgette.className}`}>
                 We're getting Married
               </p>

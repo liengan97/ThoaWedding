@@ -4,27 +4,43 @@ import React, { useState } from "react";
 
 import { toast } from "react-toastify";
 
-const conf = {
-  position: "top-center",
-  autoClose: 3000,
-  hideProgressBar: true,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  theme: "colored",
-  style: { backgroundColor: "#436135", color: "#fff" },
+const baseConf = {
+  closeButton: false,
+  style: {
+    width: '100%',
+    justifyContent: 'center'
+  },
 }
 
 const thankYou = (sender) => {
-  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, conf);
+  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, {
+    ...baseConf,
+    style: {
+      ...baseConf.style,
+      color: '#000',
+      border: "1px solid rgb(67 97 53 / 30%)"
+    }
+  });
 }
 
 const hmm = () => {
-  toast("Hmm. Bạn đang làm gì đó 😣 !", { ...conf, ...{ style: { backgroundColor: "#ffb224", color: "#000" } } });
+  toast("Hmm 😣 !", {
+    ...baseConf,
+    style: {
+      ...baseConf.style,
+      color: 'rgb(194 145 0)'
+    }
+  })
 }
 
-const hmmError = () => {
-  toast("Có lỗi rồi. Bạn thử lại sau nha. 🥲", { ...conf, ...{ style: { backgroundColor: "red", color: "#000" } } })
+const serverError = () => {
+  toast("Có lỗi rồi. Bạn thử lại sau nha. 🥲", {
+    ...baseConf,
+    style: {
+      ...baseConf.style,
+      color: "red"
+    }
+  })
 }
 
 function SendWishesForm() {
@@ -48,7 +64,7 @@ function SendWishesForm() {
         if (error.status == 429) {
           hmm();
         } else {
-          hmmError();
+          serverError();
         }
       }).finally(() => {
         setLoading(false);

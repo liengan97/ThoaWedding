@@ -1,4 +1,4 @@
-import { db } from "@/config/firebase.config";
+import { firestore } from "@/config/firebase.config";
 import WedEnv from "@/config/wedenv.config";
 import { utcTime } from "@/utils/date.util";
 import limitter from "@/utils/rate-limiter.util";
@@ -18,7 +18,7 @@ export async function POST(req) {
   limitter.set(ip, reqCount + 1);
 
   const { sender, message } = await req.json();
-  await addDoc(collection(db, WedEnv.REQUEST_LOGS_COLLECTION_NAME), {
+  await addDoc(collection(firestore, WedEnv.REQUEST_LOGS_COLLECTION_NAME), {
     wish: { sender, message },
     metadata: {
       ip,
@@ -29,7 +29,7 @@ export async function POST(req) {
     },
     ts: Timestamp.now()
   });
-  const docRef = await addDoc(collection(db, WedEnv.WISHES_COLLECTION_NAME), {
+  const docRef = await addDoc(collection(firestore, WedEnv.WISHES_COLLECTION_NAME), {
     sender,
     message,
     atUtc: utcTime(),
@@ -49,7 +49,7 @@ export async function GET(req) {
   return new Response(
     new ReadableStream({
       start(controller) {
-        const wishesCollection = collection(db, WedEnv.WISHES_COLLECTION_NAME);
+        const wishesCollection = collection(firestore, WedEnv.WISHES_COLLECTION_NAME);
         const unsubscribe = onSnapshot(wishesCollection, snapshot => {
           snapshot.docChanges().forEach(change => {
             if (change.type === "added") {
