@@ -18,6 +18,7 @@ function WishContainer() {
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
+      console.log('Server sent: ', event.data);
       setWishes(prevWishes => [...prevWishes, JSON.parse(event.data)]);
     };
 
