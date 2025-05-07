@@ -8,7 +8,7 @@ function IntroductionCard({ name, birthday, photoUrl }) {
         <Image alt='' fill className="h-full rounded-lg" src={photoUrl} />
       </div>
       <div className="absolute intro-body text-center">
-        <h3>{name?.toUpperCase()}</h3>
+        <h2>{name?.toUpperCase()}</h2>
         <p>{birthday}</p>
       </div>
     </div>
