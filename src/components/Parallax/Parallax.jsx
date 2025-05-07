@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import './styles.css';
+import { thankyouPhotoUrl } from '@/config/photo.config';
 
 function Parallax({ height, bgUrl, bgTop, children }) {
   return (
@@ -9,6 +11,7 @@ function Parallax({ height, bgUrl, bgTop, children }) {
         backgroundImage: `url(${bgUrl})`
       }}
     >
+      <Image fill src={thankyouPhotoUrl} />
       {children}
     </div>
   );
