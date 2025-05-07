@@ -41,9 +41,3 @@ html {
   font-size: 100%;
   /* Default: 16px */
 }
-
-@media screen and (min-width:768px) {
-  body {
-    background-size: cover;
-  }
-}
