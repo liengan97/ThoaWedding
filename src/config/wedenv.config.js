@@ -2,6 +2,7 @@ class WedEnv {
 
   // Storage
   static WISHES_COLLECTION_NAME = process.env.WISHES_COLLECTION_NAME || "wishes";
+  static REQUEST_LOGS_COLLECTION_NAME = process.env.REQUEST_LOGS_COLLECTION_NAME || "req_logs";
 
   // Firebase
   static FIREBASE_API_KEY = process.env.FIREBASE_API_KEY;

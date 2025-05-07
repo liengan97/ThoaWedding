@@ -8,7 +8,7 @@ function IntroductionContainer() {
       <div className="flex items-center flex-col">
         <h2 className={`text-sm lg:text-xl pt-5 pb-2 ${courgette.className}`}>About</h2>
         <div className={`text-xl lg:text-3xl pb-10 ${courgette.className}`}>
-          <p>Broom & Bridge</p>
+          <p>Groom & Bride</p>
         </div>
       </div>
       <div className="relative grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-2 pb-10">
