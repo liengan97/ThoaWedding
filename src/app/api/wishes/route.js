@@ -37,7 +37,11 @@ export async function GET(req) {
         const unsubscribe = onSnapshot(wishesCollection, snapshot => {
           snapshot.docChanges().forEach(change => {
             if (change.type === "added") {
-              controller.enqueue(`data: ${JSON.stringify(change.doc.data())}\n\n`);
+              const data = {
+                id: change.doc.id,
+                ...change.doc.data
+              }
+              controller.enqueue(`data: ${JSON.stringify(data)}\n\n`);
             }
           });
         });
