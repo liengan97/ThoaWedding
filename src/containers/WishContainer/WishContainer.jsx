@@ -9,14 +9,13 @@ import SendWishesForm from "@/components/SendWishesForm/SendWishesForm";
 import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
 import WedEnv from "@/config/wedenv.config";
-import ParallaxImage from "@/components/ParallaxImage/ParallaxImage";
 
 import fl from '@/images/FHDie4iPjN.jpg'
 function WishContainer() {
   const [wishes, setWishes] = useState([]);
 
   useEffect(() => {
-    const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
+    const eventSource = new EventSource("/api/wishes");
     eventSource.onmessage = (event) => {
       updateWishes(JSON.parse(event.data));
     };
@@ -26,7 +25,6 @@ function WishContainer() {
   const updateWishes = (wish) => {
     setWishes(prevWishes => {
       const found = prevWishes.find(w => w.id == wish.id);
-      console.log('Find', wish.id, 'from', prevWishes, 'result', found);
       return found ? prevWishes : [...prevWishes, wish];
     })
   }
