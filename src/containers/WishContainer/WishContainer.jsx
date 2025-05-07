@@ -18,26 +18,17 @@ function WishContainer() {
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
-      const wish = JSON.parse(event.data);
-      const existing = wishes.find(w => w.id == wish.id);
-      console.log('Find', wish.id, 'from', wishes, 'result', existing);
-      if (!existing) {
-        setWishes(prev => [...prev, wish]);
-        // console.log('Add new wish', wishes);
-        test();
-      }
+      updateWishes(JSON.parse(event.data));
     };
-
     return () => eventSource.close();
   }, []);
 
-  useEffect(() => {
-    // Accessing the updated value of 'items'
-    console.log('Updated items:', wishes); // Output: Updated items: ["item1", "item2", "item3"] (after 2 seconds)
-  }, [wishes]);
-
-  function test() {
-    console.log(wishes);
+  const updateWishes = (wish) => {
+    setWishes(prevWishes => {
+      const found = prevWishes.find(w => w.id == wish.id);
+      console.log('Find', wish.id, 'from', prevWishes, 'result', existing);
+      return found ? prevWishes : [...prevWishes, wish];
+    })
   }
 
   return (
