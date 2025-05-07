@@ -25,8 +25,8 @@ function WishContainer() {
   }, []);
 
   const updateWishes = (wish) => {
-    console.log('Server sent: ', wish, 'C', wishes);
     const existing = wishes.find(w => w.id == wish.id);
+    console.log('Find', wish.id, 'from', wishes, 'result', existing);
     if (!existing) {
       setWishes([...wishes, JSON.parse(wish)]);
       console.log('Add new wish', wish);
