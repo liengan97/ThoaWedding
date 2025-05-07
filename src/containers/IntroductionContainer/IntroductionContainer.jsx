@@ -7,7 +7,7 @@ function IntroductionContainer() {
     <div className="md:w-3/5 sm:w-full mx-auto py-10 relative intro-container">
       <div className="flex items-center flex-col">
         <h2 className={`text-2xl pt-5 pb-2 ${courgette.className}`}>About</h2>
-        <div className={`pb-10 ${courgette.className}`} style={{ fontSize: 36 }}>
+        <div className={`text-3xl lg:text-4xl pb-10 ${courgette.className}`}>
           <p>Broom & Bridge</p>
         </div>
       </div>

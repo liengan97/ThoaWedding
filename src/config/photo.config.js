@@ -1,19 +1,19 @@
-import bridgePhotoUrl from '@/images/0mzGqdQFMd.jpg'
-import broomPhotoUrl from '@/images/K9ffRRvX0V.jpg'
-import countDownPhotoUrl from '@/images/OLKOna9H85.jpg'
-import firstEventPhotoUrl from '@/images/z6OboXEavt.jpg'
-import secondEventPhotoUrl from '@/images/EHOmGSI4SJ.jpg'
-// import countDownPhotoUrl from '@/images/OLKOna9H85.jpg'
+import bridgePhotoUrl from '@/images/0mzGqdQFMd.png'
+import broomPhotoUrl from '@/images/K9ffRRvX0V.png'
+import countDownPhotoUrl from '@/images/OLKOna9H85.png'
+import firstEventPhotoUrl from '@/images/z6OboXEavt.png'
+import secondEventPhotoUrl from '@/images/EHOmGSI4SJ.png'
+// import countDownPhotoUrl from '@/images/OLKOna9H85.png'
 
-import f from '@/images/LxAMBEhvxi.jpg'
-import s from '@/images/EeQPcEpvPT.jpg'
-import t from '@/images/OLKOna9H85.jpg'
-import a from '@/images/psYCR24L5d.jpg'
-import h from '@/images/u4mP3Opj2P.jpg'
+import f from '@/images/LxAMBEhvxi.png'
+import s from '@/images/EeQPcEpvPT.png'
+import t from '@/images/OLKOna9H85.png'
+import a from '@/images/psYCR24L5d.png'
+import h from '@/images/u4mP3Opj2P.png'
 
 import k from '@/images/CFIiT6KZn3.png'
 
-import thankyouPhotoUrl from '@/images/aYxB3PB41K.jpg'
+import thankyouPhotoUrl from '@/images/aYxB3PB41K.png'
 
 export const IMAGES_SLIDER = [
   {

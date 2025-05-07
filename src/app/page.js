@@ -21,7 +21,7 @@ export default function Home() {
       <ToastContainer />
       <PhotoSliderContainer />
       <IntroductionContainer />
-      <Parallax height="150" bgUrl={countDownPhotoUrl.src} bgTop="30">
+      <Parallax height="150" bgUrl={countDownPhotoUrl.src} bgTop="50">
         <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} />
       </Parallax>
       <WeddingEventsContainer />
