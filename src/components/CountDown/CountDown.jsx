@@ -39,8 +39,8 @@ function Countdown({ targetDate }) {
 
   return (
     <div className="w-full h-full flex items-center flex-col place-content-center">
-      <div className="flex items-center md:py-8 pl-5">
-        <h1 className={`${courgette.className} text-4xl font-bold text-center text-white fw-600`}>Saturday, 24 May 2025</h1>
+      <div className="flex items-center md:py-8 px-5">
+        <h1 className={`${courgette.className} text-3xl md:text-4xl lg:text-4xl font-bold text-center text-white pb-5 fw-600`}>Saturday, 24 May 2025</h1>
       </div>
       <Heartbeat />
       <div className="flex items-center">
