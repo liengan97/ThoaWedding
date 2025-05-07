@@ -23,12 +23,17 @@ function WishContainer() {
       console.log('Find', wish.id, 'from', wishes, 'result', existing);
       if (!existing) {
         setWishes(prev => [...prev, wish]);
-        console.log('Add new wish', wishes);
+        // console.log('Add new wish', wishes);
+        test();
       }
     };
 
     return () => eventSource.close();
   }, []);
+
+  function test() {
+    console.log(wishes);
+  }
 
   return (
     <>
