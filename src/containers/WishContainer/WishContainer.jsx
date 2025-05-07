@@ -18,7 +18,7 @@ function WishContainer() {
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
-      const wish = event.data;
+      const wish = JSON.parse(event.data);
       const existing = wishes.find(w => w.id == wish.id);
       console.log('Find', wish.id, 'from', wishes, 'result', existing);
       if (!existing) {
