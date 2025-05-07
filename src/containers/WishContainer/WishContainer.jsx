@@ -28,7 +28,7 @@ function WishContainer() {
     console.log('Server sent: ', wish, 'C', wishes);
     const existing = wishes.find(w => w.id == wish.id);
     if (!existing) {
-      setWishes(prevWishes => [...prevWishes, JSON.parse(wish)]);
+      setWishes([...wishes, JSON.parse(wish)]);
       console.log('Add new wish', wish);
     }
   }
