@@ -18,7 +18,7 @@ function WishContainer() {
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
-      updateWishes(JSON.parse(event.date));
+      updateWishes(JSON.parse(event.data));
     };
 
     return () => eventSource.close();
