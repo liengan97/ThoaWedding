@@ -18,20 +18,17 @@ function WishContainer() {
   useEffect(() => {
     const eventSource = new EventSource(WedEnv.API_WISH_SSE_EVENTS);
     eventSource.onmessage = (event) => {
-      updateWishes(JSON.parse(event.data));
+      const wish = event.data;
+      const existing = wishes.find(w => w.id == wish.id);
+      console.log('Find', wish.id, 'from', wishes, 'result', existing);
+      if (!existing) {
+        setWishes(prev => [...prev, wish]);
+        console.log('Add new wish', wish, wishes);
+      }
     };
 
     return () => eventSource.close();
   }, []);
-
-  const updateWishes = (wish) => {
-    const existing = wishes.find(w => w.id == wish.id);
-    console.log('Find', wish.id, 'from', wishes, 'result', existing);
-    if (!existing) {
-      setWishes(prev => [...prev, wish]);
-      console.log('Add new wish', wish, wishes);
-    }
-  }
 
   return (
     <>
