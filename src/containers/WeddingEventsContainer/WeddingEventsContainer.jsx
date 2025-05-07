@@ -15,13 +15,14 @@ function WeddingEventsContainer() {
           photoUrl={firstEventPhotoUrl}
           title="Vu Quy"
           location="174 tổ 6, ấp Tân Tịch, xã Tịnh Thới, TP. Cao Lãnh, Đồng Tháp"
-          time="10:00"
+          time="09:00"
           dayText="Thứ bảy"
           dayMonth="24/05"
           year="2025"
           phoneNumber="tel:(+84)981864289"
           alternativeDay="Nhằm ngày 27 tháng 04 năm Ất Tỵ"
-          googleMapLocation="https://maps.app.goo.gl/Z64o4DrmuoCEfQnHA"
+          // googleMapLocation="https://maps.app.goo.gl/Z64o4DrmuoCEfQnHA"
+          googleMapLocation="https://maps.google.com?q=10.4171707,105.6504265,19"
         />
 
         <EventCard

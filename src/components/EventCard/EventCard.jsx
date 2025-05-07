@@ -2,6 +2,7 @@ import './style.css'
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMap, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { quicksand } from '@/utils/font.util';
 
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl }) {
   return (
@@ -12,11 +13,11 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
         </div>
 
         <div className="w-full sm:h-130 lg:h-190 mr-5 ">
-          <Image alt=''  className="inset-0 w-full h-full object-cover rounded-t-lg" src={photoUrl} />
+          <Image alt='' className="inset-0 w-full h-full object-cover rounded-t-lg" src={photoUrl} />
         </div>
 
         <div className="pt-5 px-4">
-          <p className="qsand">{location}</p>
+          <p>{location}</p>
           <p className="font-bold pt-4 pb-2">Vào lúc {time}</p>
         </div>
 
@@ -36,11 +37,10 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
           </div>
         </div>
         <div>
-          <p className="qsand f14">{alternativeDay}</p>
+          <p className={`${quicksand.className}`}>{alternativeDay}</p>
         </div>
 
         <div className="social-link flex items-center place-content-center gap-2 py-5">
-          {/* <FontAwesomeIcon icon={'phone-circle'} /> */}
           <a href={phoneNumber}><FontAwesomeIcon icon={faPhone} /></a>
           <a href={googleMapLocation} target='_blank'><FontAwesomeIcon icon={faMap} /></a>
         </div>
