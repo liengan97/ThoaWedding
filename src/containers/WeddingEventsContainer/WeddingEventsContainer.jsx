@@ -14,7 +14,7 @@ function WeddingEventsContainer() {
         <EventCard
           photoUrl={firstEventPhotoUrl}
           title="Vu Quy"
-          location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, Tân An, Long An"
+          location="174 tổ 6, ấp Tân Tịch, xã Tịnh Thới, TP. Cao Lãnh, Đồng Tháp"
           time="10:00"
           dayText="Thứ bảy"
           dayMonth="24/05"
@@ -27,7 +27,7 @@ function WeddingEventsContainer() {
         <EventCard
           photoUrl={secondEventPhotoUrl}
           title="Tân Hôn"
-          location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, Tân An, Long An"
+          location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, TP. Tân An, Long An"
           time="09:00"
           dayText="Chủ nhật"
           dayMonth="25/05"

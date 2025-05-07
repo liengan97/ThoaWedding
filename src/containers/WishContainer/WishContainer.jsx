@@ -35,7 +35,7 @@ function WishContainer() {
         </LayoutCenter>
       </Section>
 
-      {wishes.length && (<Section className="relative">
+      {wishes.length > 0 && (<Section className="relative">
         <Parallax bgUrl={fl.src}>
           <Overlay type="warm" />
           <div className="md:w-3/5 mx-auto h-screen relative">

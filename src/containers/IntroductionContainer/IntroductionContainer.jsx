@@ -11,8 +11,8 @@ function IntroductionContainer() {
           <p>Broom & Bridge</p>
         </div>
       </div>
-      <div className="relative grid sm:grid-cols-1 md:grid-cols-2 gap-2 pb-10">
-        <div className="md:pr-3 rounded-md h-150">
+      <div className="relative grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-2 pb-10">
+        <div className="md:pr-3 md:rounded-lg rounded-md h-150">
           <IntroductionCard name="Hửu Tài" birthday="14/01/1997" photoUrl={broomPhotoUrl} />
         </div>
         <div className="md:pl-3 rounded-md h-150">
