@@ -31,6 +31,11 @@ function WishContainer() {
     return () => eventSource.close();
   }, []);
 
+  useEffect(() => {
+    // Accessing the updated value of 'items'
+    console.log('Updated items:', wishes); // Output: Updated items: ["item1", "item2", "item3"] (after 2 seconds)
+  }, [wishes]);
+
   function test() {
     console.log(wishes);
   }
