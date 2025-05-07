@@ -28,14 +28,14 @@ function FadeImageSlider({ photos = [] }) {
 
           <div className="absolute inset-0 flex items-center justify-end lg:justify-center flex-col">
             <div className="flex px-5">
-              <h1 className={`text-white text-xl md:text-4xl lg:text-5xl font-bold text-center ${fzPhotograph.className} ${styles.title}`}>
+              <h1 className={`text-white text-lg md:text-4xl lg:text-5xl font-bold text-center ${fzPhotograph.className} ${styles.title}`}>
                 Hửu Tài & Kim Ngân
               </h1>
             </div>
             <div className="mb-4" style={{ width: '30px', height: '30px' }}>
               <Image alt="heart" src={k} />
             </div>
-            <div className="pb-5">
+            <div className="pb-10">
               <p className={`text-lg md:text-2xl lg:text-3xl font-bold text-white text-center ${courgette.className}`}>
                 We're getting Married
               </p>
