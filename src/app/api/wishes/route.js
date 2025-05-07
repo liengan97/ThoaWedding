@@ -8,7 +8,7 @@ export async function POST(req, res) {
   const ip = req.headers["x-forwarded-for"] || req.connection?.remoteAddress;
 
   const requestCount = limitter.get(ip) || 0;
-  console.log('ip', ip)
+  console.log('ip', req)
 
   if (requestCount >= 2) {
     return Response.json({ error: "Rate limit exceeded" }, { status: 429 });
