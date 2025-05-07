@@ -4,13 +4,13 @@ import { utcTime } from "@/utils/date.util";
 import limitter from "@/utils/rate-limiter.util";
 import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
 
-export async function POST(req, res) {
+export async function POST(req) {
   const ip = req.headers["x-forwarded-for"] || req.connection?.remoteAddress;
 
   const requestCount = limitter.get(ip) || 0;
   console.log('ip', req)
 
-  if (requestCount >= 2) {
+  if (requestCount >= 3) {
     return Response.json({ error: "Rate limit exceeded" }, { status: 429 });
   }
 
