@@ -39,7 +39,7 @@ export async function GET(req) {
             if (change.type === "added") {
               const data = {
                 id: change.doc.id,
-                ...change.doc.data
+                ...change.doc.data()
               }
               controller.enqueue(`data: ${JSON.stringify(data)}\n\n`);
             }
