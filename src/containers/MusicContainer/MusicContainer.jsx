@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { faDrum, faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import BackgroundAudio from "@/components/BackgroundAudio/BackgroundAudio";
-
+import Audio from "@/components/Audio/Audio";
 
 function MusicContainer() {
   const [isPlaying, setPlaying] = useState(false);
 
   return (
     <>
-      <BackgroundAudio isPlaying={isPlaying} files={process.env.NEXT_PUBLIC_AUDIO_FILES?.split(",")} />
+      <Audio isPlaying={isPlaying} files={process.env.NEXT_PUBLIC_AUDIO_FILES?.split(",")} />
       <div className="flex justify-center items-center cursor-pointer">
         {!isPlaying && (
           <div onClick={() => setPlaying(true)}>
