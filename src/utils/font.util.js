@@ -12,5 +12,5 @@ export const courgette = Courgette({
 
 export const fzPhotograph = localFont({
   src: "../fonts/Fz-Photograph.ttf",
-  variable: "--font-mycustom",
+  variable: "--font-fz",
 });
