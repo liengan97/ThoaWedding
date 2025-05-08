@@ -3,7 +3,7 @@
 import { getRandom } from "@/utils/app.util";
 import { useEffect, useRef } from "react";
 
-export default function BackgroundAudio({ files, isPlaying }) {
+export default function Audio({ files, isPlaying }) {
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -27,11 +27,13 @@ export default function BackgroundAudio({ files, isPlaying }) {
       return;
     }
 
-   if (isPlaying) {
-    audioRef.current.play().catch(_ => console.warn("Autoplay blocked"));
-   } else {
-    audioRef.current.pause();
-   }
+    if (isPlaying) {
+      audioRef.current.play().catch(_ => {
+        console.warn("Autoplay blocked")
+      });
+    } else {
+      audioRef.current.pause();
+    }
   }, [isPlaying])
 
   return (
