@@ -41,8 +41,12 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
         </div>
 
         <div className="social-link flex items-center place-content-center gap-2 py-5">
-          <a href={phoneNumber}><FontAwesomeIcon icon={faPhone} /></a>
-          <a href={googleMapLocation} target='_blank'><FontAwesomeIcon icon={faMapLocation} /></a>
+          <a href={phoneNumber} title='phone'>
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
+          <a href={googleMapLocation} title='map' target='_blank'>
+            <FontAwesomeIcon icon={faMapLocation} />
+          </a>
         </div>
       </div>
     </div>
