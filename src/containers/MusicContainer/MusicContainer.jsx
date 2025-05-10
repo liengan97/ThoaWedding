@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import { faDrum, faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

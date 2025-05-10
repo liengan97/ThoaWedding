@@ -15,22 +15,15 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
-async function fetchWishes() {
-  const res = await fetch("http://localhost:3000/api/wishes", { cache: "no-store" });
-  return res.json();
-}
-
-export default async function Home() {
-  const wishes = await fetchWishes();
-
+export default function Home() {
   return (
     <div>
-      <ToastContainer 
-        autoClose={3000} 
-        hideProgressBar 
-        closeOnClick 
+      <ToastContainer
+        autoClose={3000}
+        hideProgressBar
+        closeOnClick
         pauseOnHover
-        position="top-center" 
+        position="top-center"
       />
       <PhotoSliderContainer />
       <IntroductionContainer />
@@ -38,7 +31,7 @@ export default async function Home() {
         <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} />
       </Parallax>
       <WeddingEventsContainer />
-      <WishContainer _wishes={wishes} />
+      <WishContainer />
       <Parallax bgUrl={thankyouPhotoUrl.src} bgTop="10">
         <ThankYou />
       </Parallax>

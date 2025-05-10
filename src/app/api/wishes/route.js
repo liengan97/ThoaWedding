@@ -5,6 +5,28 @@ import limitter from "@/utils/rate-limiter.util";
 import { addDoc, collection, getDocs, Timestamp } from "firebase/firestore";
 import { headers } from "next/headers";
 
+const fetchWishes = async () => {
+  const snapshot = await getDocs(collection(firestore, process.env.WISHES_COLLECTION_NAME));
+  const wishes = await snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+  // Sort in descending order
+  await wishes.sort(
+    (a, b) => new Date(b.ts.seconds) - new Date(a.ts.seconds)
+  );
+
+  // Need to re-map to remove unnessary fields to save throughtput and security
+  const mapDto = wishes.map(wish => {
+    return {
+      id: wish.id,
+      at: wish.atUtc,
+      fr: wish.sender,
+      me: wish.message
+    }
+  });
+
+  return mapDto;
+}
+
 export async function POST(req) {
   const reqHeaders = headers();
   const ip = reqHeaders.get('x-forwarded-for');
@@ -36,11 +58,13 @@ export async function POST(req) {
     ts: Timestamp.now()
   });
 
-  return Response.json({ id: docRef.id });
+  // Need to get latest wishes to refresh the client UI
+  const latestWishes = await fetchWishes();
+
+  return Response.json(latestWishes);
 }
 
-export async function GET() {
-  const querySnapshot = await getDocs(collection(db, process.env.WISHES_COLLECTION_NAME));
-  const wishes = await querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+export async function GET(req) {
+  const wishes = await fetchWishes();
   return Response.json(wishes);
 }
