@@ -1,88 +1,17 @@
-import axios from "axios";
 import './styles.css';
-import React, { useState } from "react";
 
-import { toast } from "react-toastify";
-
-const baseConf = {
-  closeButton: false,
-  style: {
-    width: '100%',
-    justifyContent: 'center'
-  },
-}
-
-const thankYou = (sender) => {
-  toast(`Cảm ơn ${sender} nhiều nha 🥳🥳🥳`, {
-    ...baseConf,
-    style: {
-      ...baseConf.style,
-      color: '#000',
-      border: "1px solid rgb(67 97 53 / 30%)"
-    }
-  });
-}
-
-const hmm = () => {
-  toast("Hmm 😣 !", {
-    ...baseConf,
-    style: {
-      ...baseConf.style,
-      color: 'rgb(194 145 0)'
-    }
-  })
-}
-
-const serverError = () => {
-  toast("Có lỗi rồi. Bạn thử lại sau nha. 🥲", {
-    ...baseConf,
-    style: {
-      ...baseConf.style,
-      color: "red"
-    }
-  })
-}
-
-function SendWishesForm() {
-  const [name, setName] = useState("");
-  const [wish, setWish] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const sendWish = (e) => {
-    e.preventDefault();
-
-    if (name.trim() && wish.trim()) {
-      setLoading(true);
-      axios.post("/api/wishes", {
-        sender: name,
-        message: wish
-      }).then(_ => {
-        thankYou(name);
-        setName("");
-        setWish("");
-      }).catch(error => {
-        if (error.status == 429) {
-          hmm();
-        } else {
-          serverError();
-        }
-      }).finally(() => {
-        setLoading(false);
-      })
-    }
-  };
-
+function SendWishesForm({ senderName, wishMessage, isLoadingButton, onSenderChanged, onWishMessageChanged, onSubmit }) {
   return (
     <div className="bg-white p-8 w-100 rounded-lg shadow-2xl wish-form">
-      <form onSubmit={sendWish} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-4">
         <div>
           <label className="block text-gray-600 font-medium mb-2 text-center">Your Name</label>
           <input
             type="text"
             className="w-full p-2 border rounded-lg focus:ring-1 focus:ring-blue-400 border-gray-400"
             placeholder="Enter your name..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={senderName}
+            onChange={(e) => onSenderChanged(e.target.value)}
           />
         </div>
 
@@ -92,17 +21,17 @@ function SendWishesForm() {
             className="w-full p-2 border rounded-lg focus:ring-1 focus:ring-blue-400 resize-none border-gray-400"
             placeholder="Write your heartfelt wishes..."
             rows="4"
-            value={wish}
-            onChange={(e) => setWish(e.target.value)}
+            value={wishMessage}
+            onChange={(e) => onWishMessageChanged(e.target.value)}
           ></textarea>
         </div>
 
         <button
           type="submit"
-          disabled={loading}
+          disabled={isLoadingButton}
           className="w-full py-2  text-white rounded-lg hover:bg-blue-600 transition flex items-center justify-center"
         >
-          {loading ? (
+          {isLoadingButton ? (
             <>
               <svg className="animate-spin h-6 w-6 mr-2 text-white" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="white" strokeWidth="1"></circle>

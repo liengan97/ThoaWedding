@@ -1,5 +1,7 @@
-"use client"
-import { useState, useEffect } from "react";
+'use client'
+
+import { useEffect, useState } from "react";
+import axios from "axios";
 import MasonryWishGrid from "@/components/MasonryWishGrid/MasonryWishGrid";
 import TextCenter from "@/components/Center/TextCenter";
 import Title from "@/components/Title/Title";
@@ -9,32 +11,51 @@ import SendWishesForm from "@/components/SendWishesForm/SendWishesForm";
 import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
 
-import fl from '@/images/FHDie4iPjN.jpg'
+import noti from "@/utils/notification.util";
+import { dalat05 } from "@/config/photo.config";
+
 function WishContainer() {
   const [wishes, setWishes] = useState([]);
+  const [sender, setSender] = useState("");
+  const [wishMsg, setWishMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const eventSource = new EventSource("/api/wishes");
-    eventSource.onmessage = (event) => {
-      updateWishes(JSON.parse(event.data));
-    };
-    return () => eventSource.close();
-  }, []);
-
-  const updateWishes = (wish) => {
-    setWishes(prevWishes => {
-      const found = prevWishes.find(w => w.id == wish.id);
-      if (found) {
-        return prevWishes;
+    const fetchWishes = async () => {
+      try {
+        const response = await axios.get("/api/wishes");
+        setWishes(response.data);
+      } catch (err) {
+        console.log(error);
       }
+    }
+    fetchWishes();
+  }, [])
 
-      const updatedWishes = [...prevWishes, wish].sort(
-        (a, b) => new Date(b.ts.seconds) - new Date(a.ts.seconds)
-      );
+  const sendWish = (e) => {
+    e.preventDefault();
 
-      return updatedWishes;
-    })
-  }
+    if (sender.trim() && wishMsg.trim()) {
+      setLoading(true);
+      axios.post("/api/wishes", {
+        sender: sender,
+        message: wishMsg
+      }).then(_ => {
+        noti.thankYou(sender);
+        setSender("");
+        setWishMsg("");
+        setWishes(_.data)
+      }).catch(error => {
+        if (error.status == 429) {
+          noti.hmm();
+        } else {
+          noti.serverError();
+        }
+      }).finally(() => {
+        setLoading(false);
+      })
+    }
+  };
 
   return (
     <>
@@ -43,23 +64,31 @@ function WishContainer() {
           <Title className="pb-5">Send Your Best Wishes</Title>
         </TextCenter>
         <LayoutCenter>
-          <SendWishesForm />
+          <SendWishesForm
+            senderName={sender}
+            wishMessage={wishMsg}
+            onSubmit={sendWish}
+            isLoadingButton={loading}
+            onSenderChanged={setSender}
+            onWishMessageChanged={setWishMsg}
+          />
         </LayoutCenter>
       </Section>
 
-      {wishes.length > 0 && (<Section className="relative">
-        <Parallax bgUrl={fl.src}>
-          <Overlay type="warm" />
-          <div className="md:w-3/5 mx-auto h-screen relative">
-            <TextCenter className="h-[80px]">
-              <Title className="py-5 text-white">✨ Wishes from Everyone ✨</Title>
-            </TextCenter>
-            <div className="absolute top-[80px] bottom-20 left-0 right-0 overflow-y-scroll">
-              <MasonryWishGrid wishes={wishes} />
+      {wishes.length > 0 && (
+        <Section className="relative">
+          <Parallax bgUrl={dalat05.src}>
+            <Overlay type="warm" />
+            <div className="md:w-3/5 mx-auto h-screen relative">
+              <TextCenter className="h-[80px]">
+                <Title className="py-5 text-white">✨ Wishes from Everyone ✨</Title>
+              </TextCenter>
+              <div className="absolute top-[80px] bottom-20 left-0 right-0 overflow-y-scroll">
+                <MasonryWishGrid wishes={wishes} />
+              </div>
             </div>
-          </div>
-        </Parallax>
-      </Section>
+          </Parallax>
+        </Section>
       )}
     </>
   )

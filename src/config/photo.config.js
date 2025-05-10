@@ -15,6 +15,10 @@ import k from '@/images/CFIiT6KZn3.png'
 
 import thankyouPhotoUrl from '@/images/aYxB3PB41K.png'
 
+import dalat05 from '@/images/FHDie4iPjN.jpg'
+
+
+
 export const IMAGES_SLIDER = [
   {
     url: f.src
@@ -40,5 +44,6 @@ export {
   firstEventPhotoUrl,
   secondEventPhotoUrl,
   k,
-  thankyouPhotoUrl
+  thankyouPhotoUrl,
+  dalat05
 }

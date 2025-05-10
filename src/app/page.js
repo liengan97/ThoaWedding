@@ -1,5 +1,3 @@
-'use client'
-
 import Countdown from "@/components/CountDown/CountDown";
 import Parallax from "@/components/Parallax/Parallax";
 import ThankYou from "@/components/ThankYou/ThankYou";
@@ -18,15 +16,14 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export default function Home() {
-
   return (
     <div>
-      <ToastContainer 
-        autoClose={3000} 
-        hideProgressBar 
-        closeOnClick 
+      <ToastContainer
+        autoClose={3000}
+        hideProgressBar
+        closeOnClick
         pauseOnHover
-        position="top-center" 
+        position="top-center"
       />
       <PhotoSliderContainer />
       <IntroductionContainer />
