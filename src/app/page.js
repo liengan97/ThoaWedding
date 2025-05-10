@@ -15,7 +15,14 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
-export default function Home() {
+async function fetchWishes() {
+  const res = await fetch("http://localhost:3000/api/wishes", { cache: "no-store" });
+  return res.json();
+}
+
+export default async function Home() {
+  const wishes = await fetchWishes();
+
   return (
     <div>
       <ToastContainer toastClassName="bg-blue-500 text-white" />
@@ -25,7 +32,7 @@ export default function Home() {
         <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} />
       </Parallax>
       <WeddingEventsContainer />
-      <WishContainer />
+      <WishContainer _wishes={wishes} />
       <Parallax bgUrl={thankyouPhotoUrl.src} bgTop="10">
         <ThankYou />
       </Parallax>

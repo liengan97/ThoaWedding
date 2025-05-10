@@ -2,7 +2,7 @@ import { db } from "@/config/firebase.config";
 import WedEnv from "@/config/wedenv.config";
 import { utcTime } from "@/utils/date.util";
 import limitter from "@/utils/rate-limiter.util";
-import { addDoc, collection, onSnapshot, Timestamp } from "firebase/firestore";
+import { addDoc, collection, getDocs, Timestamp } from "firebase/firestore";
 import { headers } from "next/headers";
 
 export async function POST(req) {
@@ -39,37 +39,8 @@ export async function POST(req) {
   return Response.json({ id: docRef.id });
 }
 
-export async function GET(req) {
-  const headers = new Headers({
-    "Content-Type": "text/event-stream",
-    "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
-  });
-
-  return new Response(
-    new ReadableStream({
-      start(controller) {
-        const wishesCollection = collection(db, WedEnv.WISHES_COLLECTION_NAME);
-        const unsubscribe = onSnapshot(wishesCollection, snapshot => {
-          snapshot.docChanges().forEach(change => {
-            if (change.type === "added") {
-              const data = {
-                id: change.doc.id,
-                ...change.doc.data()
-              }
-              controller.enqueue(`data: ${JSON.stringify(data)}\n\n`);
-            }
-          });
-        });
-
-        req.signal.addEventListener("abort", () => {
-          unsubscribe();
-          controller.close();
-        });
-
-        return () => unsubscribe();
-      },
-    }),
-    { headers }
-  );
+export async function GET() {
+  const querySnapshot = await getDocs(collection(db, process.env.WISHES_COLLECTION_NAME));
+  const wishes = await querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  return Response.json(wishes);
 }

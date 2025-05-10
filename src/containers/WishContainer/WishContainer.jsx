@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useEffect } from "react";
 import MasonryWishGrid from "@/components/MasonryWishGrid/MasonryWishGrid";
 import TextCenter from "@/components/Center/TextCenter";
@@ -10,16 +11,8 @@ import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
 
 import fl from '@/images/FHDie4iPjN.jpg'
-function WishContainer() {
-  const [wishes, setWishes] = useState([]);
 
-  useEffect(() => {
-    const eventSource = new EventSource("/api/wishes");
-    eventSource.onmessage = (event) => {
-      updateWishes(JSON.parse(event.data));
-    };
-    return () => eventSource.close();
-  }, []);
+function WishContainer({ wishes = [] }) {
 
   const updateWishes = (wish) => {
     setWishes(prevWishes => {
