@@ -25,7 +25,13 @@ export default async function Home() {
 
   return (
     <div>
-      <ToastContainer toastClassName="bg-blue-500 text-white" />
+      <ToastContainer 
+        autoClose={3000} 
+        hideProgressBar 
+        closeOnClick 
+        pauseOnHover
+        position="top-center" 
+      />
       <PhotoSliderContainer />
       <IntroductionContainer />
       <Parallax height="150" bgUrl={countDownPhotoUrl.src} bgTop="50">

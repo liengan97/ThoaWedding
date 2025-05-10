@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Save the Date - Tài & Ngân",
+  title: "Tài & Ngân Wedding",
   description: "Save the Date - Tài & Ngân",
 };
 
