@@ -1,30 +1,22 @@
 "use client"
-import React, { useState, useEffect, use } from "react";
+
+import React, { useState, useEffect } from "react";
+import moment from "moment-timezone";
 import CountDownItem from "./CountDownItem";
 import Heartbeat from "../Heartbeat/Heartbeat";
-import { courgette } from "@/utils/font.util";
+import SlidingText from "@/components/SlidingText/SlidingText";
 
-function Countdown({ targetDate }) {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+function Countdown({ targetDate, tz }) {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const updateCountdown = () => {
-      const now = new Date();
-      const eventDate = new Date(targetDate);
-      const timeDifference = eventDate - now;
+      const now = moment().tz(tz);
+      const target = moment.tz(targetDate, tz);
+      const duration = moment.duration(target.diff(now));
 
-      if (timeDifference > 0) {
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
-        const seconds = Math.floor((timeDifference / 1000) % 60);
-
-        setTimeLeft({ days, hours, minutes, seconds });
+      if (duration > 0) {
+        setTimeLeft({ days: duration.days(), hours: duration.hours(), minutes: duration.minutes(), seconds: duration.seconds() });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
@@ -35,12 +27,12 @@ function Countdown({ targetDate }) {
     const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, [targetDate, tz]);
 
   return (
     <div className="w-full min-h-screen flex items-center flex-col place-content-center">
       <div className="flex items-center md:py-8 px-5">
-        <h1 className={`${courgette.className} text-3xl md:text-4xl lg:text-4xl font-bold text-center text-white pb-5 fw-600`}>Saturday, 24 May 2025</h1>
+        <SlidingText />
       </div>
       <Heartbeat />
       <div className="flex items-center">

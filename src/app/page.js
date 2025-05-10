@@ -1,40 +1,57 @@
+'use client'
+
+import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { PCountDown, PThankYou } from "@/config/photo.config";
+import "react-toastify/dist/ReactToastify.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Countdown from "@/components/CountDown/CountDown";
 import Parallax from "@/components/Parallax/Parallax";
 import ThankYou from "@/components/ThankYou/ThankYou";
 import WedEnv from "@/config/wedenv.config";
-import { countDownPhotoUrl, thankyouPhotoUrl } from "@/config/photo.config";
 import IntroductionContainer from "@/containers/IntroductionContainer/IntroductionContainer";
 import PhotoSliderContainer from "@/containers/PhotoSliderContainer/PhotoSliderContainer";
 import WeddingEventsContainer from "@/containers/WeddingEventsContainer/WeddingEventsContainer";
 import WishContainer from "@/containers/WishContainer/WishContainer";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import GalleryContainer from "@/containers/GalleryContainer/GalleryContainer";
 
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   return (
-    <div>
-      <ToastContainer
-        autoClose={3000}
-        hideProgressBar
-        closeOnClick
-        pauseOnHover
-        position="top-center"
-      />
-      <PhotoSliderContainer />
-      <IntroductionContainer />
-      <Parallax height="150" bgUrl={countDownPhotoUrl.src} bgTop="50">
-        <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} />
-      </Parallax>
-      <WeddingEventsContainer />
-      <WishContainer />
-      <Parallax bgUrl={thankyouPhotoUrl.src} bgTop="10">
-        <ThankYou />
-      </Parallax>
-    </div>
+    <>
+      {isLoading && <LoadingScreen />}
+      {!isLoading &&
+        <div className="dark:bg-white">
+          <ToastContainer
+            autoClose={3000}
+            hideProgressBar
+            closeOnClick
+            pauseOnHover
+            position="top-center"
+          />
+          <PhotoSliderContainer />
+          <IntroductionContainer />
+          <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
+            <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
+          </Parallax>
+          <WeddingEventsContainer />
+          <GalleryContainer />
+          <WishContainer />
+          <Parallax bgUrl={PThankYou.src} bgTop="10">
+            <ThankYou />
+          </Parallax>
+        </div>
+      }
+    </>
   );
 }

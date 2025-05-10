@@ -16,7 +16,7 @@ export default function Audio({ files, isPlaying }) {
     });
 
     return () => {
-      audioRef.current.removeEventListener("ended", () => {
+      audioRef?.current?.removeEventListener("ended", () => {
         audioRef.current.play();
       });
     };
