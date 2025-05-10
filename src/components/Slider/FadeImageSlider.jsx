@@ -20,7 +20,7 @@ function FadeImageSlider({ photos = [] }) {
           key={index}
           className={`absolute top-0 left-0 h-full w-full bg-cover transition-opacity duration-[2000ms] bg-center ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
-          style={{ backgroundImage: `url(${photo.url})` }}
+          style={{ backgroundImage: `url(${photo.src})` }}
         >
           <div className="absolute inset-0 bg-black opacity-50" />
 

@@ -12,7 +12,7 @@ import Parallax from "@/components/Parallax/Parallax";
 import Overlay from "@/components/Overlay/Overlay";
 
 import noti from "@/utils/notification.util";
-import { dalat05 } from "@/config/photo.config";
+import { PWishesBg } from "@/config/photo.config";
 
 function WishContainer() {
   const [wishes, setWishes] = useState([]);
@@ -49,7 +49,7 @@ function WishContainer() {
         if (error.status == 429) {
           noti.hmm();
         } else {
-          noti.serverError();
+          noti.error();
         }
       }).finally(() => {
         setLoading(false);
@@ -61,7 +61,7 @@ function WishContainer() {
     <>
       <Section className="pb-12 px-4">
         <TextCenter>
-          <Title className="pb-5">Send Your Best Wishes</Title>
+          <Title className="pb-5 dark:text-black">Send Your Best Wishes</Title>
         </TextCenter>
         <LayoutCenter>
           <SendWishesForm
@@ -77,7 +77,7 @@ function WishContainer() {
 
       {wishes.length > 0 && (
         <Section className="relative">
-          <Parallax bgUrl={dalat05.src}>
+          <Parallax bgUrl={PWishesBg.src}>
             <Overlay type="warm" />
             <div className="md:w-3/5 mx-auto h-screen relative">
               <TextCenter className="h-[80px]">

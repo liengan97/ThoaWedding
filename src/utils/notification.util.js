@@ -29,7 +29,7 @@ const hmm = () => {
   })
 }
 
-const serverError = () => {
+const error = () => {
   toast("Có lỗi rồi. Bạn thử lại sau nha. 🥲", {
     ...baseConf,
     style: {
@@ -42,7 +42,7 @@ const serverError = () => {
 const noti = {
   thankYou,
   hmm,
-  serverError
+  error
 }
 
 export default noti;

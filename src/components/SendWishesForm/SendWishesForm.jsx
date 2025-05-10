@@ -5,10 +5,12 @@ function SendWishesForm({ senderName, wishMessage, isLoadingButton, onSenderChan
     <div className="bg-white p-8 w-100 rounded-lg shadow-2xl wish-form">
       <form onSubmit={onSubmit} className="space-y-4">
         <div>
-          <label className="block text-gray-600 font-medium mb-2 text-center">Your Name</label>
+          <label htmlFor="uname" className="block text-gray-600 font-medium mb-2 text-center">Your Name</label>
           <input
+            id="uname"
             type="text"
-            className="w-full p-2 border rounded-lg focus:ring-1 focus:ring-blue-400 border-gray-400"
+            name="uname"
+            className="w-full p-2 border rounded-lg focus:ring-1 focus:outline-none focus:ring-[#436135] border-gray-400 focus:border-[#436135] dark:text-black dark:focus:outline-none dark:focus:border-[#436135]"
             placeholder="Enter your name..."
             value={senderName}
             onChange={(e) => onSenderChanged(e.target.value)}
@@ -16,9 +18,11 @@ function SendWishesForm({ senderName, wishMessage, isLoadingButton, onSenderChan
         </div>
 
         <div>
-          <label className="block text-gray-600 font-medium mb-2 text-center">Your Wish</label>
+          <label htmlFor="wish-msg" className="block text-gray-600 font-medium mb-2 text-center">Your Wish</label>
           <textarea
-            className="w-full p-2 border rounded-lg focus:ring-1 focus:ring-blue-400 resize-none border-gray-400"
+            id="wish-msg"
+            name="wish-msg"
+            className="w-full p-2 border rounded-lg focus:ring-1 focus:outline-none focus:border-[#436135] focus:ring-[#436135] resize-none border-gray-400 dark:text-black dark:focus:outline-none dark:focus:border-[#436135]"
             placeholder="Write your heartfelt wishes..."
             rows="4"
             value={wishMessage}
@@ -29,7 +33,7 @@ function SendWishesForm({ senderName, wishMessage, isLoadingButton, onSenderChan
         <button
           type="submit"
           disabled={isLoadingButton}
-          className="w-full py-2  text-white rounded-lg hover:bg-blue-600 transition flex items-center justify-center"
+          className="w-full py-2 text-white rounded-lg bg-[#436135] transition flex items-center justify-center cursor-pointer hover:bg-[#344c29]"
         >
           {isLoadingButton ? (
             <>

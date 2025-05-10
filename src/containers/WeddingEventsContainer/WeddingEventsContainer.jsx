@@ -1,5 +1,5 @@
 import './styles.css'
-import { firstEventPhotoUrl, secondEventPhotoUrl } from '@/config/photo.config';
+import { PEvents } from '@/config/photo.config';
 import EventCard from "@/components/EventCard/EventCard";
 import Title from '@/components/Title/Title';
 
@@ -7,13 +7,13 @@ function WeddingEventsContainer() {
   return (
     <div className="md:w-3/5 mx-auto py-10 relative" >
       <div className="flex items-center flex-col pb-5 px-5 text-center event">
-        <Title className="py-5">Our Wedding Events</Title>
-        <p>We invite you to share in the joy of our wedding!</p>
+        <Title className="py-5 dark:text-black">Our Wedding Events</Title>
+        <p className='dark:text-black'>We invite you to share in the joy of our wedding!</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <EventCard
-          photoUrl={firstEventPhotoUrl}
+          photoUrl={PEvents.May24}
           title="Vu Quy"
           location="174 tổ 6, ấp Tân Tịch, xã Tịnh Thới, TP. Cao Lãnh, Đồng Tháp"
           time="09:00"
@@ -26,10 +26,10 @@ function WeddingEventsContainer() {
         />
 
         <EventCard
-          photoUrl={secondEventPhotoUrl}
+          photoUrl={PEvents.May25}
           title="Tân Hôn"
           location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, TP. Tân An, Long An"
-          time="09:00"
+          time="10:00"
           dayText="Chủ nhật"
           dayMonth="25/05"
           year="2025"
