@@ -1,12 +1,12 @@
 import './style.css'
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { quicksand } from '@/utils/font.util';
 
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl }) {
   return (
-    <div className="mx-3 py-5">
+    <div className="mx-3 py-5 dark:text-black">
       <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center bg-white">
         <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 font-bold text-gray-800 rounded-lg ${quicksand.className}`}>
           {title}
@@ -42,10 +42,10 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
 
         <div className="social-link flex items-center place-content-center gap-2 py-5">
           <a href={phoneNumber} title='phone'>
-            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon icon={faPhone} className='animate-gentle-shake' />
           </a>
-          <a href={googleMapLocation} title='map' target='_blank'>
-            <FontAwesomeIcon icon={faMapLocation} />
+          <a href={googleMapLocation} title='map' target='_blank' className='text-red-500'>
+            <FontAwesomeIcon icon={faLocationDot} className='animate-bounce' />
           </a>
         </div>
       </div>

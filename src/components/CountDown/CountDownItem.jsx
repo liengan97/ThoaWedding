@@ -2,7 +2,7 @@ import { courgette } from "@/utils/font.util";
 
 function CountDownItem({ text, value }) {
   return (
-    <div className={`flex flex-col p-2 bg-white rounded-box items-center`}>
+    <div className={`flex flex-col p-2 bg-white rounded-box items-center dark:text-black`}>
       <span className="countdown font-mono text-4xl md:text-6xl text-center">
         <span style={{ "--value": value }} aria-label={value}>{value}</span>
       </span>
