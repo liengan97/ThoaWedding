@@ -13,8 +13,10 @@ import Overlay from "@/components/Overlay/Overlay";
 
 import noti from "@/utils/notification.util";
 import { PWishesBg } from "@/config/photo.config";
+import useEventPassed from "@/hooks/useEventPassed";
 
 function WishContainer() {
+  const isEventPassed = useEventPassed();
   const [wishes, setWishes] = useState([]);
   const [sender, setSender] = useState("");
   const [wishMsg, setWishMsg] = useState("");
@@ -59,21 +61,21 @@ function WishContainer() {
 
   return (
     <>
-      <Section className="pb-12 px-4">
-        <TextCenter>
-          <Title className="pb-5 dark:text-black">Send Your Best Wishes</Title>
-        </TextCenter>
-        <LayoutCenter>
-          <SendWishesForm
-            senderName={sender}
-            wishMessage={wishMsg}
-            onSubmit={sendWish}
-            isLoadingButton={loading}
-            onSenderChanged={setSender}
-            onWishMessageChanged={setWishMsg}
-          />
-        </LayoutCenter>
-      </Section>
+      {!isEventPassed && (
+        <Section className="pb-12 px-4">
+          <Title center className="pb-5 dark:text-black">Send Your Best Wishes</Title>
+          <LayoutCenter>
+            <SendWishesForm
+              senderName={sender}
+              wishMessage={wishMsg}
+              onSubmit={sendWish}
+              isLoadingButton={loading}
+              onSenderChanged={setSender}
+              onWishMessageChanged={setWishMsg}
+            />
+          </LayoutCenter>
+        </Section>
+      )}
 
       {wishes.length > 0 && (
         <Section className="relative">

@@ -1,8 +1,10 @@
 import './styles.css'
 
-function Title({ className, children }) {
+function Title({ className, children, center }) {
   return (
-    <h2 className={`text-2xl font-bold tit ${className}`}>{children}</h2>
+    <h2 className={`text-2xl font-bold tit ${center ? 'text-center' : ''} ${className}`}>
+      {children}
+    </h2>
   )
 }
 

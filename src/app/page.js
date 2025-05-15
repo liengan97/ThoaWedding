@@ -16,11 +16,13 @@ import WeddingEventsContainer from "@/containers/WeddingEventsContainer/WeddingE
 import WishContainer from "@/containers/WishContainer/WishContainer";
 import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 import GalleryContainer from "@/containers/GalleryContainer/GalleryContainer";
+import useEventPassed from "@/hooks/useEventPassed";
 
 
 config.autoAddCss = false;
 
 export default function Home() {
+  const isEventPassed = useEventPassed();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -41,9 +43,11 @@ export default function Home() {
           />
           <PhotoSliderContainer />
           <IntroductionContainer />
-          <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
-            <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
-          </Parallax>
+          {!isEventPassed && (
+            <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
+              <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
+            </Parallax>
+          )}
           <WeddingEventsContainer />
           <GalleryContainer />
           <WishContainer />

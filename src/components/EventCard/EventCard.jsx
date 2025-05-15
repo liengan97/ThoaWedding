@@ -3,8 +3,10 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { quicksand } from '@/utils/font.util';
+import useEventPassed from '@/hooks/useEventPassed';
 
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl }) {
+  const isEventPassed = useEventPassed();
   return (
     <div className="mx-3 py-5 dark:text-black">
       <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center bg-white">
@@ -36,18 +38,20 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
             </div>
           </div>
         </div>
-        <div>
+        <div className='pb-5'>
           <p className="text-gray-600 italic text-sm">{alternativeDay}</p>
         </div>
 
-        <div className="social-link flex items-center place-content-center gap-2 py-5">
-          <a href={phoneNumber} title='phone'>
-            <FontAwesomeIcon icon={faPhone} className='animate-gentle-shake' />
-          </a>
-          <a href={googleMapLocation} title='map' target='_blank' className='text-red-500'>
-            <FontAwesomeIcon icon={faLocationDot} className='animate-bounce' />
-          </a>
-        </div>
+        {!isEventPassed && (
+          <div className="social-link flex items-center place-content-center gap-2 pb-5">
+            <a href={phoneNumber} title='phone'>
+              <FontAwesomeIcon icon={faPhone} className='animate-gentle-shake' />
+            </a>
+            <a href={googleMapLocation} title='map' target='_blank' className='text-red-500'>
+              <FontAwesomeIcon icon={faLocationDot} className='animate-bounce' />
+            </a>
+          </div>
+        )}
       </div>
     </div>
 
