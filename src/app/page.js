@@ -42,18 +42,18 @@ export default function Home() {
             position="top-center"
           />
           <PhotoSliderContainer />
-          <IntroductionContainer />
+          {!isEventPassed && (<IntroductionContainer />)}
           {!isEventPassed && (
             <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
               <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
             </Parallax>
           )}
-          <WeddingEventsContainer />
+          {!isEventPassed && (<WeddingEventsContainer />)}
           <GalleryContainer />
           <WishContainer />
-          <Parallax bgUrl={PThankYou.src} bgTop="10">
+          {/* <Parallax bgUrl={PThankYou.src} bgTop="10">
             <ThankYou />
-          </Parallax>
+          </Parallax> */}
         </div>
       }
     </>
