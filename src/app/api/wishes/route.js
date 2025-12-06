@@ -10,9 +10,12 @@ const fetchWishes = async () => {
   const wishes = await snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
   // Sort in descending order
-  await wishes.sort(
-    (a, b) => new Date(b.ts.seconds) - new Date(a.ts.seconds)
-  );
+  wishes.sort((a, b) => {
+    const aTime = a.ts ? a.ts.toMillis() : 0;
+    const bTime = b.ts ? b.ts.toMillis() : 0;
+    return bTime - aTime;
+  });
+  
 
   // Need to re-map to remove unnessary fields to save throughtput and security
   const mapDto = wishes.map(wish => {
@@ -28,7 +31,7 @@ const fetchWishes = async () => {
 }
 
 export async function POST(req) {
-  const reqHeaders = headers();
+  const reqHeaders = await  headers();
   const ip = reqHeaders.get('x-forwarded-for');
 
   const reqCount = limitter.get(ip) || 0;
