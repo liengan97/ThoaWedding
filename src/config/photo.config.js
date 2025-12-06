@@ -42,10 +42,10 @@ export const HOME_SLIDER_PHOTOS = [
 
 // ----------
 
-import gallery01 from '@/images/gallery/lOfdoPk4gF.jpg'
+import gallery01 from '@/images/gallery/DaDf7AKUvA.jpg'
 import gallery03 from '@/images/gallery/UVGUA2UD5w.jpg'
 import gallery04 from '@/images/gallery/oVmWqTmIgJ.jpg'
-import gallery05 from '@/images/gallery/iHpbuXIRCp.jpg'
+import gallery05 from '@/images/gallery/EoaTrTnGfV.jpg'
 import gallery06 from '@/images/gallery/udsCkIc1JU.jpg'
 import gallery07 from '@/images/gallery/SDjXLNjADT.jpg'
 import gallery08 from '@/images/gallery/NlvKqfXfOt.jpg'
@@ -54,7 +54,7 @@ import gallery10 from '@/images/gallery/LQMQblqDMX.jpg'
 import gallery11 from '@/images/gallery/juiGoL0wDP.jpg'
 import gallery13 from '@/images/gallery/UXmLHKBJRq.jpg'
 import gallery14 from '@/images/gallery/FZ9KsTajYP.jpg'
-import gallery15 from '@/images/gallery/EoaTrTnGfV.jpg'
+import gallery15 from '@/images/gallery/iHpbuXIRCp.jpg'
 import gallery16 from '@/images/gallery/DaDf7AKUvA.jpg'
 import gallery18 from '@/images/gallery/cV80tLOf62.jpg'
 import gallery19 from '@/images/gallery/2ipI3iw0JD.jpg'
