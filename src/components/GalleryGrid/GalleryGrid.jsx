@@ -109,7 +109,7 @@ const GalleryGrid = ({ images }) => {
               src={image.src}
               alt={`Gallery image ${index + 1}`}
               width={300}
-              height={image.height || 200}
+              height={image.height || 180}
               style={{ objectFit: 'contain' }}
               className="w-full h-auto rounded-lg"
             />
