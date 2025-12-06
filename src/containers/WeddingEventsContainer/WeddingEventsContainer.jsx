@@ -11,31 +11,22 @@ function WeddingEventsContainer() {
         <p className='dark:text-black'>We invite you to share in the joy of our wedding!</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-1">
         <EventCard
           photoUrl={PEvents.May24}
-          title="Vu Quy"
-          location="174 tổ 6, ấp Tân Tịch, xã Tịnh Thới, TP. Cao Lãnh, Đồng Tháp"
-          time="09:00"
-          dayText="Thứ bảy"
-          dayMonth="24/05"
-          year="2025"
-          phoneNumber="tel:(+84)981864289"
-          alternativeDay="Nhằm ngày 27 tháng 04 năm Ất Tỵ"
-          googleMapLocation="https://maps.app.goo.gl/Z64o4DrmuoCEfQnHA"
-        />
-
-        <EventCard
-          photoUrl={PEvents.May25}
-          title="Tân Hôn"
-          location="225 Huỳnh Công Phên, ấp Hoà Ngãi, xã An Vĩnh Ngãi, TP. Tân An, Long An"
-          time="10:00"
-          dayText="Chủ nhật"
-          dayMonth="25/05"
-          year="2025"
-          phoneNumber="tel:(+84)961152698"
-          alternativeDay="Nhằm ngày 28 tháng 04 năm Ất Tỵ"
-          googleMapLocation="https://maps.app.goo.gl/kb7brrJdEgKU3kxy6"
+          title="LỄ BÁO HỶ"
+          restaurant="TRUNG TÂM HỘI NGHỊ & TIỆC CƯỚI"
+          restaurantName="VƯỜN CAU"
+          restaurantHall="Sảnh PANSY"
+          location="360 Phan Văn Trị, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh"
+          time="11:00"
+          time2="12:00"
+          dayText="Chủ Nhật"
+          dayMonth="04/01"
+          year="2026"
+          phoneNumber="tel:(+84)357169101"
+          alternativeDay="Nhằm ngày 16 tháng 11 năm Ất Tỵ"
+          googleMapLocation="https://maps.app.goo.gl/uoNAj5YZiuLab1bV6"
         />
       </div>
     </div>

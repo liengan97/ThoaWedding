@@ -42,13 +42,18 @@ export default function Home() {
             position="top-center"
           />
           <PhotoSliderContainer />
-          {!isEventPassed && (<IntroductionContainer />)}
-          {!isEventPassed && (
+          {/* {!isEventPassed && (<IntroductionContainer />)} */}
+          {/* {!isEventPassed && (
             <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
               <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
             </Parallax>
-          )}
-          {!isEventPassed && (<WeddingEventsContainer />)}
+          )} */}
+          <IntroductionContainer />
+          <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
+            <Countdown targetDate={WedEnv.WED_COUNT_DOWN_T0_DATE} tz="Asia/Ho_Chi_Minh" />
+          </Parallax>
+          {/* {!isEventPassed && (<WeddingEventsContainer />)} */}
+          <WeddingEventsContainer />
           <GalleryContainer />
           <WishContainer />
           {/* <Parallax bgUrl={PThankYou.src} bgTop="10">

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { courgette } from '@/utils/font.util';
 
-const dates = ["Saturday, 24", "Sunday, 25"];
+const dates = ["Sunday, 4", "Sunday, 4"];
 
 const SlidingText = () => {
   useEffect(() => {
@@ -46,16 +46,17 @@ const SlidingText = () => {
             }
           `}
         </style>
+
         {dates.map((date, index) => (
           <span
             key={index}
-            className={`slide-text-${index + 1} text-white ${courgette.className} fw-600`}
+            className={`slide-text-${index + 1} text-black ${courgette.className} fw-600`}
           >
             {date}
           </span>
         ))}
       </div>
-      <span className={`text-white ${courgette.className} fw-600`}>May 2025</span>
+      <span className={`text-black ${courgette.className} fw-600`}>January 2026</span>
     </div>
   );
 };

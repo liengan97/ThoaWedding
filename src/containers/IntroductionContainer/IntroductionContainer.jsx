@@ -13,10 +13,10 @@ function IntroductionContainer() {
       </div>
       <div className="relative grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 lg:gap-2 pb-10">
         <div className="md:pr-3 md:rounded-lg rounded-md h-150">
-          <IntroductionCard name="Hửu Tài" birthday="14/01/1997" photoUrl={PIntro.Groom} />
+          <IntroductionCard name="PHẠM HOÀNG TIẾN" birthday="Thứ Nam" photoUrl={PIntro.Groom} />
         </div>
         <div className="md:pl-3 rounded-md h-150">
-          <IntroductionCard name="Kim Ngân" birthday="22/04/1997" photoUrl={PIntro.Bride} />
+          <IntroductionCard name="NGUYỄN THỊ KIM THOA" birthday="Út Nữ" photoUrl={PIntro.Bride} />
         </div>
       </div>
     </div>
