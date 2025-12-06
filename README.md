@@ -14,10 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Staging (login is required)
 
-- **Host**: https://tn-dev.vercel.app
+- **Host**: https://thoa-wedding-dev.vercel.app
 - **Storage**: Firestore
 
 ### Production
 
-- **Host**: https://taingan.vercel.app
+- **Host**: https://tien&thoa.vercel.app
 - **Storage**: Firestore
