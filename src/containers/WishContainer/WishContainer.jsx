@@ -61,7 +61,7 @@ function WishContainer() {
 
   return (
     <>
-      {!isEventPassed && (
+      {(
         <Section className="pb-12 px-4">
           <Title center className="pb-5 dark:text-black">Send Your Best Wishes</Title>
           <LayoutCenter>
