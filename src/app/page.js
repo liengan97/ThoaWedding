@@ -12,6 +12,7 @@ import ThankYou from "@/components/ThankYou/ThankYou";
 import WedEnv from "@/config/wedenv.config";
 import IntroductionContainer from "@/containers/IntroductionContainer/IntroductionContainer";
 import PhotoSliderContainer from "@/containers/PhotoSliderContainer/PhotoSliderContainer";
+import TitleInfoWedContainer from "@/containers/TitleInfoWedContainer/TitleInfoWedContainer";
 import WeddingEventsContainer from "@/containers/WeddingEventsContainer/WeddingEventsContainer";
 import WishContainer from "@/containers/WishContainer/WishContainer";
 import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
@@ -41,7 +42,7 @@ export default function Home() {
             pauseOnHover
             position="top-center"
           />
-          <PhotoSliderContainer />
+          <TitleInfoWedContainer/>
           {/* {!isEventPassed && (<IntroductionContainer />)} */}
           {/* {!isEventPassed && (
             <Parallax height="150" bgUrl={PCountDown.src} bgTop="50">
@@ -59,6 +60,7 @@ export default function Home() {
           {/* <Parallax bgUrl={PThankYou.src} bgTop="10">
             <ThankYou />
           </Parallax> */}
+          <PhotoSliderContainer />
         </div>
       }
     </>

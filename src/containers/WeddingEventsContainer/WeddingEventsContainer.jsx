@@ -7,8 +7,8 @@ function WeddingEventsContainer() {
   return (
     <div className="md:w-3/5 mx-auto py-10 relative" >
       <div className="flex items-center flex-col pb-5 px-5 text-center event">
-        <Title className="py-5 dark:text-black">Our Wedding Events</Title>
-        <p className='dark:text-black'>We invite you to share in the joy of our wedding!</p>
+        <Title className="py-5 text-red-900">Our Wedding Events</Title>
+        <p className='text-red-900'>We invite you to share in the joy of our wedding!</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-1">

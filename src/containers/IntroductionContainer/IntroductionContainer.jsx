@@ -6,8 +6,8 @@ function IntroductionContainer() {
   return (
     <div className="md:w-3/5 sm:w-full mx-auto py-10 relative dark:bg-white intro-container">
       <div className="flex items-center flex-col">
-        <h2 className={`text-sm lg:text-xl pt-5 pb-2 dark:text-black ${courgette.className}`}>About</h2>
-        <div className={`text-xl lg:text-3xl pb-10 dark:text-black ${courgette.className}`}>
+        <h2 className={`text-sm lg:text-xl pt-5 pb-2 text-red-900 ${courgette.className}`}>About</h2>
+        <div className={`text-xl lg:text-3xl pb-10 text-red-900 ${courgette.className}`}>
           <p>Groom & Bride</p>
         </div>
       </div>

@@ -8,9 +8,9 @@ import useEventPassed from '@/hooks/useEventPassed';
 function EventCard({ title, location, time, dayText, year, dayMonth, alternativeDay, phoneNumber, googleMapLocation, photoUrl, time2, restaurant, restaurantName, restaurantHall }) {
   const isEventPassed = useEventPassed();
   return (
-    <div className="mx-3 py-5 dark:text-black">
+    <div className="mx-3 py-5 text-red-900">
       <div className="relative w-full h-full border-1 border-gray-300 border-t-0 rounded-lg text-center bg-white">
-        <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 font-bold text-gray-800 rounded-lg ${quicksand.className}`}>
+        <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 font-bold text-red-900 rounded-lg ${quicksand.className}`}>
           {title}
         </div>
 
@@ -20,7 +20,7 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
 
         <div className="pt-5 px-4">
           <p>{restaurant}</p>
-          <p className={`font-bold text-4xl font-serif pt-4 pb-2 ${quicksand.className}`}>{restaurantName}</p>
+          <p className="font-bold text-4xl font-serif pt-4 pb-2" >{restaurantName}</p>
           <p className={`font-bold pt-2 pb-2 ${quicksand.className}`}>{restaurantHall}</p>
           <p>{location}</p>
 
@@ -60,7 +60,7 @@ function EventCard({ title, location, time, dayText, year, dayMonth, alternative
           </div>
         </div>
         <div className='pb-5'>
-          <p className="text-gray-600 italic text-sm">{alternativeDay}</p>
+          <p className="text-red-900 italic text-sm">{alternativeDay}</p>
         </div>
 
         {(

@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { faDrum, faMusic } from "@fortawesome/free-solid-svg-icons";
+import * as styles from "./styles.module.css";
+import { courgette } from "@/utils/font.util";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Audio from "@/components/Audio/Audio";
 
@@ -12,16 +16,16 @@ function MusicContainer() {
       <div className="flex justify-center items-center cursor-pointer">
         {!isPlaying && (
           <div onClick={() => setPlaying(true)}>
-            <FontAwesomeIcon className="text-white" icon={faMusic} />
-            <span className="text-white pl-1 text-sm"> Play</span>
+            <FontAwesomeIcon className="text-red-800" icon={faMusic} />
+            <span className={`text-red-800 pl-1 text-sm ${courgette.className}`}> Play</span>
           </div>
         )}
         {
           isPlaying && (
             <div className="animate-bounce" onClick={() => setPlaying(false)}>
-              <FontAwesomeIcon className="text-white" icon={faDrum} />
-              <FontAwesomeIcon className="text-white px-1" icon={faMusic} />
-              <FontAwesomeIcon className="text-white" icon={faDrum} />
+              <FontAwesomeIcon className={`text-red-800 ${styles.titleStroke}`} icon={faDrum} />
+              <FontAwesomeIcon className={`text-red-800 px-1 ${styles.titleStroke}`} icon={faMusic} />
+              <FontAwesomeIcon className={`text-red-800 ${styles.titleStroke}`} icon={faDrum} />
             </div>
           )
         }

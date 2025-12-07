@@ -63,7 +63,7 @@ function WishContainer() {
     <>
       {(
         <Section className="pb-12 px-4">
-          <Title center className="pb-5 dark:text-black">Send Your Best Wishes</Title>
+          <Title center className="pb-5 text-red-900">Send Your Best Wishes</Title>
           <LayoutCenter>
             <SendWishesForm
               senderName={sender}

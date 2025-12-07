@@ -50,13 +50,13 @@ const SlidingText = () => {
         {dates.map((date, index) => (
           <span
             key={index}
-            className={`slide-text-${index + 1} text-black ${courgette.className} fw-600`}
+            className={`slide-text-${index + 1} text-red-900 ${courgette.className} fw-600`}
           >
             {date}
           </span>
         ))}
       </div>
-      <span className={`text-black ${courgette.className} fw-600`}>January 2026</span>
+      <span className={`text-red-900 ${courgette.className} fw-600`}>January 2026</span>
     </div>
   );
 };

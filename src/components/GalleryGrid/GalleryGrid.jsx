@@ -125,7 +125,7 @@ const GalleryGrid = ({ images }) => {
       {!showAll && (
         <div className="pt-2 hidden md:block text-center">
           <button
-            className={`font-bold cursor-pointer text-md ${courgette.className} text-[#436135]`}
+            className={`font-bold cursor-pointer text-md ${courgette.className} text-[#7f1d1d]`}
             onClick={() => setShowAll(true)}
           >
             View all photos
