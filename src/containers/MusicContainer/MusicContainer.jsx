@@ -17,7 +17,9 @@ function MusicContainer() {
         {!isPlaying && (
           <div onClick={() => setPlaying(true)}>
             <FontAwesomeIcon className="text-red-800" icon={faMusic} />
-            <span className={`text-red-800 pl-1 text-sm ${courgette.className}`}> Play</span>
+            <span className={`text-red-800 pl-1 px-1 text-sm ${courgette.className}`}> Play</span>
+            <FontAwesomeIcon className={`text-red-800 ${styles.titleStroke}`} icon={faDrum} />
+
           </div>
         )}
         {

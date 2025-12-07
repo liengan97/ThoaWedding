@@ -41,7 +41,7 @@ function ImageFirstSlider({ photos = [] }) {
             <div className="w-full flex justify-center">
               <div className="flex flex-col items-center w-1/2 space-y-4">
                 {/* Tiêu đề */}
-                <p className="md:text-2xl lg:text-3xl text-red-800 text-center">
+                <p className="text-xl lg:text-3xl text-red-800 text-center">
                   THƯ MỜI TIỆC CƯỚI
                 </p>
 
@@ -59,13 +59,13 @@ function ImageFirstSlider({ photos = [] }) {
                 </p>
 
                 <p
-                  className={`text-2xl md:text-5xl lg:text-5xl font-extrabold text-red-800 text-center font-serif ${styles.titleStroke}`}
+                  className={`text-3xl md:text-5xl lg:text-5xl font-extrabold text-red-800 text-center font-serif ${styles.titleStroke}`}
                 >
-                  0 4 . 0 1 . 2 0 2 6
+                  04 . 01 . 2026
                 </p>
                 <div className="w-full border-t-2 border-red-900"></div>
 
-                <p className="md:text-xl lg:text-3xl text-red-800 text-center font-serif">
+                <p className="md:text-xl lg:text-3xl pt-3 pb-3 text-red-800 text-center font-serif">
                   TRÂN TRỌNG KÍNH MỜI!
                 </p>
               </div>
