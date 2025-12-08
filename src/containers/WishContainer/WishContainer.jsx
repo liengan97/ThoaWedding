@@ -68,12 +68,12 @@ function WishContainer() {
     <>
       {
         <Section className="pb-12 px-4">
-          <Title
+          <h2
             center
-            className="pb-5 pt-30 text-xl lg:text-3xl  text-[#425937] font-bold font-serif"
+            className="pb-8 pt-30 text-xl lg:text-3xl text-center text-[#425937] font-bold font-serif"
           >
             Gửi lời chúc đến cặp đôi
-          </Title>
+          </h2>
           <LayoutCenter>
             <SendWishesForm
               senderName={sender}
