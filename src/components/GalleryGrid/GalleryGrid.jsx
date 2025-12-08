@@ -132,10 +132,10 @@ const GalleryGrid = ({ images }) => {
       {!showAll && (
         <div className="pt-0 hidden md:block text-center">
           <button
-            className={`font-bold cursor-pointer text-md ${courgette.className} text-[#425937]`}
+            className={`font-light cursor-pointer text-md italic text-[#425937]`}
             onClick={() => setShowAll(true)}
           >
-            Tất cả ảnh
+            - Tất cả ảnh -
           </button>
         </div>
       )}

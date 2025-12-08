@@ -28,7 +28,7 @@ function FadeImageSlider({ photos = [] }) {
 
           <div className="absolute inset-0 flex items-center justify-end lg:justify-center flex-col">
             <div className="flex px-5 pb-10" >
-              <h1 className={`text-white text-lg md:text-4xl lg:text-5xl font-bold text-center ${fzPhotograph.className} ${styles.title}`}>
+              <h1 className={`text-white text-lg md:text-4xl lg:text-5xl text-center ${fzPhotograph.className} ${styles.title}`}>
                 Thank You!
               </h1>
             </div>
@@ -36,7 +36,7 @@ function FadeImageSlider({ photos = [] }) {
               <p className={`text-sm md:text-xl lg:text-2xl font-bold text-white text-center ${courgette.className}`}>
                 Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình chúng tôi.
               </p>
-              <p className={`text-sm md:text-xl lg:text-2xl font-bold text-white text-center ${courgette.className}`}>
+              <p className={`text-sm md:text-xl pt-4 lg:text-2xl font-bold text-white text-center ${courgette.className}`}>
                 Trân thành cảm ơn!
               </p>
             </div>
