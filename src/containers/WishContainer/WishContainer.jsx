@@ -72,7 +72,7 @@ function WishContainer() {
             center
             className="pb-8 pt-30 text-xl lg:text-3xl text-center text-[#425937] font-bold font-serif"
           >
-            Gửi lời chúc đến cặp đôi
+            Ghé lại vài lời chúc yêu thương đến dâu rể bạn nhé! ☺️☺️☺️
           </h2>
           <LayoutCenter>
             <SendWishesForm
