@@ -28,7 +28,7 @@ function ImageFirstSlider({ photos = [] }) {
           <div className="absolute inset-0 bg-black opacity-10" />
 
           {/* Tên cặp đôi ở trên */}
-          <div className="absolute top-20 w-full flex justify-center px-5">
+          <div className="absolute top-10 w-full flex justify-center px-5">
             <h1
               className={`text-red-800 text-lg md:text-4xl lg:text-5xl text-center 
                           ${fzPhotograph.className} ${styles.title} ${styles.titleStroke}`}
@@ -37,13 +37,13 @@ function ImageFirstSlider({ photos = [] }) {
             </h1>
           </div>
 
-          <div className="absolute bottom-30 w-full flex justify-center">
+          <div className="absolute bottom-10 w-full flex justify-center">
             <div className="w-full flex justify-center">
-              <div className="flex flex-col items-center w-1/2 space-y-4">
+              <div className="flex flex-col items-center w-1/2 space-y-2">
                 {/* Tiêu đề */}
                 <p className="text-xl lg:text-3xl text-red-800 text-center">
                   THƯ MỜI TIỆC CƯỚI
-                </p>
+                </p>  
 
                 <div className="w-full border-t-2 border-red-900"></div>
 
