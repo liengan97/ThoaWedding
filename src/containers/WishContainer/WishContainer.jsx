@@ -67,7 +67,7 @@ function WishContainer() {
     <>
       {
         <Section className="pb-12 px-4">
-          <Title center className="pb-5 pt-30 text-[#425937]">
+          <Title center className="pb-5 pt-30 text-xl lg:text-3xl  text-[#425937] font-bold font-serif">
             Gửi lời chúc đến cặp đôi
           </Title>
           <LayoutCenter>

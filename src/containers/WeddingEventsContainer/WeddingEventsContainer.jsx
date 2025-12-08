@@ -8,9 +8,11 @@ function WeddingEventsContainer() {
   return (
     <div className="md:w-3/5 mx-auto py-10 relative">
       <div className="flex items-center flex-col pb-5 px-5 text-center event">
-        <Title className="py-5 text-xl lg:text-3xl pb-5 text-[#425937] font-bold font-serif">LỄ BÁO HỶ</Title>
+        <Title className="py-5 text-xl lg:text-3xl pb-5 text-[#425937] font-bold font-serif">
+          LỄ BÁO HỶ
+        </Title>
         <p className={`text-[#425937] ${quicksand.className}`}>
-         Hân hạnh mời bạn đến dự lễ báo hỷ của chúng tôi!
+          Hân hạnh mời bạn đến dự lễ báo hỷ của chúng tôi!
         </p>
       </div>
 

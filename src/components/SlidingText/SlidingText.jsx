@@ -28,22 +28,21 @@ const SlidingText = () => {
 
   return (
     <div>
-            <div className="flex items-center flex-col">
+      <div className="flex items-center flex-col">
         <h2 className="text-md lg:text-xl pt-5 pb-5 text-[#425937]">
           CÙNG ĐẾM NGƯỢC THỜI GIAN
         </h2>
-        <div className="text-2xl lg:text-3xl pb-5 font-bold text-[#425937] font-serif">
+        <div className="text-3xl lg:text-3xl pb-5 font-bold text-[#425937] font-serif">
           <p>SAVE THE DATE</p>
         </div>
       </div>
-    
-    <div
-      className={`flex items-center space-x-2 text-2xl md:text-3xl lg:text-4xl font-bold ${courgette.className} fw-600`}
-    >
-      
-      <div className="relative h-12 lg:w-51 w-34 flex items-center justify-center overflow-hidden">
-        <style>
-          {`
+
+      <div
+        className={`flex items-center space-x-2 text-2xl md:text-3xl lg:text-4xl font-bold ${courgette.className} fw-600`}
+      >
+        <div className="relative h-12 lg:w-51 w-34 flex items-center justify-center overflow-hidden">
+          <style>
+            {`
             .slide-text-1, .slide-text-2 {
               position: absolute;
               top-0;
@@ -58,21 +57,19 @@ const SlidingText = () => {
               animation: slideUp2 10s ease-in-out infinite;
             }
           `}
-        </style>
+          </style>
 
-        {dates.map((date, index) => (
-          <span
-            key={index}
-            className={`slide-text-${index + 1} text-[#425937]  fw-600`}
-          >
-            {date}
-          </span>
-        ))}
+          {dates.map((date, index) => (
+            <span
+              key={index}
+              className={`slide-text-${index + 1} text-[#425937]  fw-600`}
+            >
+              {date}
+            </span>
+          ))}
+        </div>
+        <span className={`text-[#425937]  fw-600`}>Tháng 1 Năm 2026</span>
       </div>
-      <span className={`text-[#425937]  fw-600`}>
-        Tháng 1 Năm 2026
-      </span>
-    </div>
     </div>
   );
 };
