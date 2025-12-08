@@ -8,10 +8,7 @@ import { GRID_PHOTOS } from "./grid-photo.config";
 const GalleryContainer = () => {
   return (
     <Section className="md:w-4/5 px-4 mx-auto">
-      <TextCenter className="py-5">
-        <Title>Photo Gallery</Title>
-      </TextCenter>
-      <LayoutCenter className="pt-10 pb-20">
+      <LayoutCenter className="pt-0 pb-0">
         <GalleryGrid images={GRID_PHOTOS} />
       </LayoutCenter>
     </Section>

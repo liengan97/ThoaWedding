@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { courgette } from '@/utils/font.util';
+import { useEffect } from "react";
+import { courgette } from "@/utils/font.util";
 
-const dates = ["Sunday, 4", "Sunday, 4"];
+const dates = ["Chủ nhật, 4", "Chủ nhật, 4"];
 
 const SlidingText = () => {
   useEffect(() => {
@@ -27,7 +27,20 @@ const SlidingText = () => {
   }, []);
 
   return (
-    <div className={`flex items-center space-x-2 text-2xl md:text-3xl lg:text-4xl font-bold ${courgette.className} fw-600`}>
+    <div>
+            <div className="flex items-center flex-col">
+        <h2 className="text-md lg:text-xl pt-5 pb-5 text-[#425937]">
+          CÙNG ĐẾM NGƯỢC THỜI GIAN
+        </h2>
+        <div className="text-2xl lg:text-3xl pb-5 font-bold text-[#425937] font-serif">
+          <p>SAVE THE DATE</p>
+        </div>
+      </div>
+    
+    <div
+      className={`flex items-center space-x-2 text-2xl md:text-3xl lg:text-4xl font-bold ${courgette.className} fw-600`}
+    >
+      
       <div className="relative h-12 lg:w-51 w-34 flex items-center justify-center overflow-hidden">
         <style>
           {`
@@ -50,13 +63,16 @@ const SlidingText = () => {
         {dates.map((date, index) => (
           <span
             key={index}
-            className={`slide-text-${index + 1} text-red-900 ${courgette.className} fw-600`}
+            className={`slide-text-${index + 1} text-[#425937]  fw-600`}
           >
             {date}
           </span>
         ))}
       </div>
-      <span className={`text-red-900 ${courgette.className} fw-600`}>January 2026</span>
+      <span className={`text-[#425937]  fw-600`}>
+        Tháng 1 Năm 2026
+      </span>
+    </div>
     </div>
   );
 };

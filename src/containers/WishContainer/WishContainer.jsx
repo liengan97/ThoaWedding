@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -30,40 +30,46 @@ function WishContainer() {
       } catch (err) {
         console.log(error);
       }
-    }
+    };
     fetchWishes();
-  }, [])
+  }, []);
 
   const sendWish = (e) => {
     e.preventDefault();
 
     if (sender.trim() && wishMsg.trim()) {
       setLoading(true);
-      axios.post("/api/wishes", {
-        sender: sender,
-        message: wishMsg
-      }).then(_ => {
-        noti.thankYou(sender);
-        setSender("");
-        setWishMsg("");
-        setWishes(_.data)
-      }).catch(error => {
-        if (error.status == 429) {
-          noti.hmm();
-        } else {
-          noti.error();
-        }
-      }).finally(() => {
-        setLoading(false);
-      })
+      axios
+        .post("/api/wishes", {
+          sender: sender,
+          message: wishMsg,
+        })
+        .then((_) => {
+          noti.thankYou(sender);
+          setSender("");
+          setWishMsg("");
+          setWishes(_.data);
+        })
+        .catch((error) => {
+          if (error.status == 429) {
+            noti.hmm();
+          } else {
+            noti.error();
+          }
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
   };
 
   return (
     <>
-      {(
+      {
         <Section className="pb-12 px-4">
-          <Title center className="pb-5 text-red-900">Send Your Best Wishes</Title>
+          <Title center className="pb-5 pt-10 text-[#425937]">
+            Gửi lời chúc đến cặp đôi
+          </Title>
           <LayoutCenter>
             <SendWishesForm
               senderName={sender}
@@ -75,7 +81,7 @@ function WishContainer() {
             />
           </LayoutCenter>
         </Section>
-      )}
+      }
 
       {wishes.length > 0 && (
         <Section className="relative">
@@ -83,7 +89,9 @@ function WishContainer() {
             <Overlay type="warm" />
             <div className="md:w-3/5 mx-auto h-screen relative">
               <TextCenter className="h-[80px]">
-                <Title className="py-5 text-white">✨ Wishes from Everyone ✨</Title>
+                <Title className="py-5 text-white">
+                  ✨ Lời chúc từ mọi người ✨
+                </Title>
               </TextCenter>
               <div className="absolute top-[80px] bottom-20 left-0 right-0 overflow-y-scroll">
                 <MasonryWishGrid wishes={wishes} />
@@ -93,7 +101,7 @@ function WishContainer() {
         </Section>
       )}
     </>
-  )
+  );
 }
 
 export default WishContainer;

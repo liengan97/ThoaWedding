@@ -37,10 +37,10 @@ function Countdown({ targetDate, tz }) {
       <Heartbeat />
       <div className="flex items-center">
         <div className="grid grid-flow-col gap-5 auto-cols-max place-items-center text-center py-8">
-          <CountDownItem text="days" value={timeLeft.days} />
-          <CountDownItem text="hours" value={timeLeft.hours} />
-          <CountDownItem text="minutes" value={timeLeft.minutes} />
-          <CountDownItem text="seconds" value={timeLeft.seconds} />
+          <CountDownItem text="NGÀY" value={timeLeft.days} />
+          <CountDownItem text="GIỜ" value={timeLeft.hours} />
+          <CountDownItem text="PHÚT" value={timeLeft.minutes} />
+          <CountDownItem text="GIÂY" value={timeLeft.seconds} />
         </div>
       </div>
     </div>

@@ -98,6 +98,13 @@ const GalleryGrid = ({ images }) => {
 
   return (
     <div className="w-full">
+       {/* Tiêu đề Album */}
+    <div className=" text-center my-0">
+      <h2 className="text-xl lg:text-3xl pb-5 text-[#425937] font-bold font-serif">
+        ALBUM ẢNH
+      </h2>
+    </div>
+
       {/* Desktop grid */}
       <div className="hidden md:block columns-4 gap-4 w-full relative">
         {!showAll && (
@@ -115,7 +122,7 @@ const GalleryGrid = ({ images }) => {
                 height={image.height || 200}
                 quality={90}
                 style={{ objectFit: "contain" }}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-[70vh] rounded-lg"
               />
             </div>
           );
@@ -123,32 +130,32 @@ const GalleryGrid = ({ images }) => {
       </div>
 
       {!showAll && (
-        <div className="pt-2 hidden md:block text-center">
+        <div className="pt-0 hidden md:block text-center">
           <button
-            className={`font-bold cursor-pointer text-md ${courgette.className} text-[#7f1d1d]`}
+            className={`font-bold cursor-pointer text-md ${courgette.className} text-[#425937]`}
             onClick={() => setShowAll(true)}
           >
-            View all photos
+            Tất cả ảnh
           </button>
         </div>
       )}
 
       {/* Mobile swiper */}
-      <div className="block md:hidden relative h-screen" ref={sectionRef}>
+      <div className="block md:hidden relative h-[70vh]" ref={sectionRef}>
         <div
-          className="swiper-container h-full w-full overflow-hidden flex justify-center items-center"
+          className="swiper-container h-[70vh] w-full overflow-hidden flex justify-center items-center"
           ref={swiperRef}
         >
-          <div className="swiper-wrapper h-full">
+          <div className="swiper-wrapper h-[70vh]">
             {images.map((image, index) => {
               const src = getImageSrc(image);
               if (!src) return null;
               return (
                 <div
                   key={index}
-                  className="swiper-slide flex justify-center items-center h-full"
+                  className="swiper-slide flex justify-center items-center h-[70vh]"
                 >
-                  <div className="relative w-full h-full flex items-center">
+                  <div className="relative w-full h-[70vh] flex items-center">
                     {image.useOptimized ? (
                       <Image
                         src={src}
@@ -157,7 +164,7 @@ const GalleryGrid = ({ images }) => {
                         height={image.height || 200}
                         quality={90}
                         style={{ objectFit: "contain" }}
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-[70vh] rounded-lg "
                       />
                     ) : (
                       <img
@@ -166,7 +173,7 @@ const GalleryGrid = ({ images }) => {
                         width={1080}
                         height={image.height || 200}
                         style={{ objectFit: "contain" }}
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-[70vh] rounded-lg"
                       />
                     )}
                   </div>

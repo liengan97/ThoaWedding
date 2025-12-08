@@ -16,7 +16,7 @@ function ImageFirstSlider({ photos = [] }) {
   }, [photos.length]);
 
   return (
-    <div className="relative min-h-[100vh] w-screen bg-black min-h-[-webkit-fill-available]">
+    <div className="relative min-h-[100vh] w-screen bg-white min-h-[-webkit-fill-available]">
       {photos.map((photo, index) => (
         <div
           key={index}
@@ -25,12 +25,12 @@ function ImageFirstSlider({ photos = [] }) {
           }`}
           style={{ backgroundImage: `url(${photo.src})` }}
         >
-          <div className="absolute inset-0 bg-black opacity-10" />
+          <div className="absolute inset-0 bg-white opacity-10" />
 
           {/* Tên cặp đôi ở trên */}
           <div className="absolute top-10 w-full flex justify-center px-5">
             <h1
-              className={`text-red-800 text-lg md:text-4xl lg:text-5xl text-center 
+              className={`text-[#425937] text-lg md:text-4xl lg:text-5xl text-center 
                           ${fzPhotograph.className} ${styles.title} ${styles.titleStroke}`}
             >
               Hoàng Tiến & Kim Thoa
@@ -41,31 +41,31 @@ function ImageFirstSlider({ photos = [] }) {
             <div className="w-full flex justify-center">
               <div className="flex flex-col items-center w-1/2 space-y-2">
                 {/* Tiêu đề */}
-                <p className="text-xl lg:text-3xl text-red-800 text-center">
+                <p className="text-xl lg:text-3xl text-[#425937] text-center">
                   THƯ MỜI TIỆC CƯỚI
-                </p>  
+                </p>
 
-                <div className="w-full border-t-2 border-red-900"></div>
+                <div className="w-full border-t-2 border-[#425937]"></div>
 
                 <p
-                  className={`md:text-xl lg:text-3xl font-bold text-red-800 text-center px-1 font-serif ${styles.titleStroke}`}
+                  className={`md:text-xl lg:text-3xl font-bold text-[#425937] text-center px-1 font-serif ${styles.titleStroke}`}
                 >
                   CHỦ NHẬT -{" "}
                   <span
-                    className={`text-2xl  lg:text-5xl font-bold text-red-800 text-center ${styles.titleStroke}`}
+                    className={`text-2xl  lg:text-5xl font-bold text-[#425937] text-center ${styles.titleStroke}`}
                   >
                     11:00
                   </span>
                 </p>
 
                 <p
-                  className={`text-3xl md:text-5xl lg:text-5xl font-extrabold text-red-800 text-center font-serif ${styles.titleStroke}`}
+                  className={`text-3xl md:text-5xl lg:text-5xl font-extrabold text-[#425937] text-center font-serif ${styles.titleStroke}`}
                 >
                   04 . 01 . 2026
                 </p>
-                <div className="w-full border-t-2 border-red-900"></div>
+                <div className="w-full border-t-2 border-[#425937]"></div>
 
-                <p className="md:text-xl lg:text-3xl pt-3 pb-3 text-red-800 text-center font-serif">
+                <p className="md:text-xl lg:text-3xl pt-3 pb-3 text-[#425937] text-center font-serif">
                   TRÂN TRỌNG KÍNH MỜI!
                 </p>
               </div>

@@ -22,9 +22,9 @@
 
 
 .titleStroke {
-  -webkit-text-stroke: 0px #860f2d; /* viền vàng nhạt mỏng */
+  -webkit-text-stroke: 0px #425937; /* viền vàng nhạt mỏng */
   text-shadow: 
-    0 1px 0.1px #cebec0,   /* bóng sáng gần */
-    0 2px 1px #cebec0,  /* bóng sáng xa hơn */
-    0 3px 5px #740f1b;  /* bóng sáng mờ dần */
+    0 1px 0.1px rgb(255, 255, 255),   /* bóng sáng gần */
+    0 2px 1px #ccdac6,  /* bóng sáng xa hơn */
+    0 3px 5px #425937;  /* bóng sáng mờ dần */
 }
