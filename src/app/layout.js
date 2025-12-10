@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Tiến & Thoa Wedding",
-  description: "Save the Date - Tiến & Thoa",
+  title: "TIẾN & THOA WEDDING",
+  description: "SAVE THE DATE - TIẾN & THOA",
 };
 
 export default function RootLayout({ children }) {
